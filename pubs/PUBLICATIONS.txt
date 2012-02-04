@@ -1,0 +1,186 @@
+Updates for each publication
+  1) This list
+  2) Put pdf in publications folder
+  3) Update bibtex file
+  4) Update publications zip
+  5) preston.co.nz - the list on the webpage
+  6) BU website: https://physics.bu.edu/rails/people/show/1404
+  7) Win scp index.html and pubs folder over to preston.co.nz
+
+nn.
+YYYYMMDD - Journal
+   TITLE: 
+   AUTHORS: 
+   URL: 
+   DOI: 
+
+19.
+20110516 - Phys. Rev. B 83, 205106 (2011)
+   TITLE: First-principles calculation of resonant x-ray emission
+          spectra applied to ZnO
+   AUTHORS: A. R. H. Preston, A. DeMasi, L. F. J. Piper, K. E. Smith,
+            W. R. L. Lambrecht, A. Boonchun, T. Cheiwchanchamnangij, 
+	    J. Arnemann, M. van Schilfgaarde, B. J. Ruck
+   URL: http://link.aps.org/doi/10.1103/PhysRevB.83.205106
+   DOI: 10.1103/PhysRevB.83.205106
+
+18.
+20101201 - Phys. Rev. B 82, 235103 (2010)
+   TITLE: Soft x-ray spectroscopic study of the ferromagnetic
+          insulator V{_0.82}Cr{_0.18}O{_2}
+   AUTHORS: L. F. J. Piper, A. DeMasi, S. W. Cho, A. R. H. Preston,
+            J. Laverock, K. E. Smith, K. G. West, J. W. Lu, 
+	    and S. A. Wolf
+   URL: http://link.aps.org/doi/10.1103/PhysRevB.82.235103
+   DOI: 10.1103/PhysRevB.82.235103
+
+17.
+20100622 - Phys. Rev. B. 81, 233305 (2010)
+   TITLE: Direct evidence of metallicity at ZnO (0001bar)-(1x1)
+          surfaces from angle-resolved photoemission spectroscopy
+   AUTHORS: L. F. J. Piper, A. R. H. Preston, A. Fedorov, S. W. Cho,
+            A. DeMasi, K. E. Smith
+   URL: http://link.aps.org/doi/10.1103/PhysRevB.81.233305
+   DOI: 10.1103/PhysRevB.81.233305
+16.
+20100219 - Appl. Phys. Lett. 96, 071914(2010)
+   TITLE: Tunable electrical and optical properties of hafnium
+          nitride thin films
+   AUTHORS: I. L. Farrell, R. J. Reeves, A. R. H. Preston,
+            B. M. Ludbrook, J. E. Downes, B. J. Ruck, S. M. Durbin
+   URL: http://link.aip.org/link/?APPLAB/96/071914/1
+   DOI: 10.1063/1.3327329
+
+15
+20100210 - Phys. Chem. Chem. Phys 12, 3171 (2010)
+   TITLE: Electronic structure of N,N'-ethylene-bis(1,1,1-
+          trifluoropentane-2,4-dioneiminato)-copper(II)
+          (Cu-TFAC), from soft X-ray spectroscopies and
+          density functional theory calculations
+   AUTHORS: A. DeMasi and S. W. Cho and L. F. J. Piper and
+                  A. R. H. Preston and K. E. Smith and
+                  R. J. Allenbaugh and W. A. Barksdale and
+                  L. H. Doerrer
+   URL: http://dx.doi.org/10.1039/b926277f
+   DOI: 10.1039/b926277f
+
+14.
+20100128 - PhD thesis
+   TITLE: Electronic structure of the rare-earth nitrides
+   AUTHORS: A. R. H. Preston
+   URL: http://hdl.handle.net/10063/1180
+   DOI: ???
+
+13.
+20100119 - Appl. Phys. Lett. 96, 032101 (2010)
+   TITLE: Electronic band structure information of GdN extracted
+	  from x-ray absorption and emission spectroscopy
+   AUTHORS: A. R. H. Preston, B. J. Ruck, W. R. L. Lambrecht
+            L. F. J. Piper, J. E. Downes, K. E. Smith, H. J. Trodahl
+   URL: http://link.aip.org/link/?APPLAB/96/032101/1
+   DOI: 10.1063/1.3291057
+
+12.
+20100118 - J. Magn. Magn. Mater. 322, 1973 (2010)
+   TITLE: Magnetic properties of ErN films
+   AUTHORS: C. Meyer, B. J. Ruck, A. R. H. Preston, S. Granville,
+            G. V. M. Williams, H. J. Trodahl
+   URL: http://dx.doi.org/10.1016/j.jmmm.2010.01.016
+   DOI: 10.1016/j.jmmm.2010.01.016
+
+11.
+20100111 - J. Phys. Chem. C 114, 1928 (2010)
+   TITLE: Electronic structure of C60/Phthalocyanine/ITO interfaces
+          studied using soft x-ray spectroscopies
+   AUTHORS: S. W. Cho, L. F. J. Piper, A. DeMasi, A. R. H. Preston
+            K. E. Smith, K. V. Chauhan, P. Sullivan, R. A. Hatton
+	    T. S. Jones
+   URL: http://dx.doi.org/10.1021/jp910504a
+   DOI: 10.1021/jp910504a
+
+10.
+20090923 - J. Appl. Phys. 106, 063910 (2009)
+   TITLE: Growth and properties of epitaxial GdN
+   AUTHORS: B. M. Ludbrook, I. L. Farrell, M. Kuebel, B. J. Ruck,
+   	    A. R. H. Preston, H. J. Trodahl, L. Ranno, R. J. Reeves,
+	    S. M. Durbin
+   URL: http://link.aip.org/link/?JAP/106/063910
+   DOI: 10.1063/1.3211290
+
+9.
+20090212 - Phys. Rev. B, 79, 054301 (2009)
+   TITLE: Vibrational properties of rare-earth nitrides: Raman 
+          spectra and theory
+   AUTHORS: S. Granville, C. Meyer, A.~R.~H. Preston, B.~M. Ludbrook,
+            B.~J. Ruck, H.~J. Trodahl, T.~R. Paudel, W.~R.~L. Lambrecht
+   URL: http://link.aps.org/doi/10.1103/PhysRevB.79.054301
+   DOI: 10.1103/PhysRevB.79.054301
+
+8.
+Phys. Rev. B 78, 174406 (2008)
+   TITLE: Near-zero-moment ferromagnetism in the semiconductor SmN
+   AUTHORS: C. Meyer, B. J. Ruck, J. Zhong, S. Granville,
+            A. R. H. Preston, G. V. M. Williams, H. J. Trodahl
+   URL: 
+   DOI: 
+
+7.
+Phys. Rev. B 78, 155114 (2008)
+   TITLE: Band structure of ZnO from resonant x-ray emission spectroscopy
+   AUTHORS: A. R. H. Preston, B. J. Ruck, L. F. J. Piper, A. DeMasi,
+            K. E. Smith, A. Schleife, F. Fuchs, F. Bechstedt,
+	    J. Chai, S. M. Durbin
+   URL:
+   DOI:
+
+6.
+J. Appl. Phys. 104, 103710 (2008)
+   TITLE: Electronic properties of (Ga,Mn)N thin films with 
+          high Mn content
+   AUTHORS: S. Granville, B. J. Ruck, A. R. H. Preston, T. Stewart,
+            F. Budde, H. J. Trodahl, A. Bittar, J. E. Downes,
+	    M. Ridgway
+   URL: 
+   DOI: 
+
+5.
+Phys. Rev. B 76, 245120 (2008)
+   TITLE: Comparison between experiment and calculated band
+          structures for DyN and SmN
+   AUTHORS: A. R. H. Preston, S. Granville, D. H. Housden,
+            B. M. Ludbrook, B. J. Ruck, H. J. Trodahl, A. Bittar,
+	    G. V. M. Williams, J. E. Downes, A. DeMasi, Y. Zhang,
+	    K. E. Smith, W. R. L. Lambrecht
+   URL: 
+   DOI: 
+
+4.
+Phys. Rev. B 76, 085211 (2007)
+   TITLE: Ferromagneteic redshift of the optical gap in GdN
+   AUTHORS: H. J. Trodahl, A. R. H. Preston, J. Zhong, B. J. Ruck,
+            N. M. Strickland, C. Mitra, W. R. L. Lambrecht
+   URL: 
+   DOI: 
+
+3.
+Phys. Rev. B 73, 235335 (2008)
+   TITLE: Semiconducting ground state of GdN thin films
+   AUTHORS: S. Granville, B. J. Ruck, F. Budde, A. Koo, D. J. Pringle,
+            F. Kuchler, A. R. H. Preston, D. H. Housden, N. Lund,
+	    A. Bittar, G. V. M. Williams, H. J. Trodahl
+   URL: 
+   DOI: 
+
+8.
+Phys. Rev. B 78, 174406 (2008)
+   TITLE: Near-zero-moment ferromagnetism in the semiconductor SmN
+   AUTHORS: 
+   URL: 
+   DOI: 
+
+8.
+Phys. Rev. B 78, 174406 (2008)
+   TITLE: Near-zero-moment ferromagnetism in the semiconductor SmN
+   AUTHORS: 
+   URL: 
+   DOI: 
