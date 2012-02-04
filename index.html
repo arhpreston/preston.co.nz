@@ -21,11 +21,12 @@
     body { padding-top: 20px; padding-bottom: 40px; }
 
     /* Basic layout for the overview section at the top of the page */
-    .hero-unit { padding:30px 60px 0px 60px; margin-bottom:0px; } /* default = 60px
+    .hero-unit { padding:30px 60px 30px 60px; } /* default = 60px
 
     /* Used to fix navbar in place as we scoll */
     .scroll-fix div ul {
-	padding-left:60px; background-color: whiteSmoke; z-index:100; order:solid 1px;}
+	padding-left:60px; background-color: whiteSmoke; z-index:100;
+	border-radius:6px; -webkit-border-radius:6px; -moz-border-radius:6px; }
     .scroll-fix-fixed { position:fixed; top:0; }
 
     /* Effect to allow expansion of hidden sentences in text */
@@ -69,71 +70,72 @@
 
     <div class="hero-unit">
       <div class="row head">
-	<div class="span10" style="hite-space:nowrap; order:solid 1px;">  
-	  <h1 id="me">Andrew Preston</h1>
-	</div>
+    	<div class="span10">
+    	  <h1 id="me">Andrew Preston</h1>
+    	</div>
       </div>
 
       <div class="row">
-	<div class="span7">
-	  <p>Lives
-	    <a href="#" class="expand">here<span>. As of February 2012 he can be found in Wellington, New Zealand</span></a>.
-	    This particular Andrew holds a doctorate in <a href="#" class="expand"><span>condensed matter </span>physics</a>
-	    and has three passports. He claims to be a fan of
-	    <a href="#" class="expand">good food<span> and cooking with friends and family</span></a>,
-	    <a href="#" class="expand">red wine<span>, a Central Otago pinot noir perhaps</span></a>,
-	    <a href="#" class="expand">beautiful prose<span> as exemplified by <em>The Quiet Girl</em> by Peter Hoeg, <em>Tender is the Night</em> by F. Scott Fitzgerald, and <em>East of Eden</em> by John Steinbeck</span></a>,
-	    <a href="#" class="expand">competitive sport<span> and masters like the <em>New England Patriots</em>, the <em>Detroit Red Wings</em>, and <em>Roger Federer</em></span></a>,
-	    <a href="#" class="expand">new ideas<span> and thus everything <em>Robin Hanson</em> writes</span></a>,
-	    <a href="#" class="expand">light planes<span> (about fifteen hours logged)</span></a>,
-	    <a href="#" class="expand">and travel<span>. He intends to see the Northern Lights from a dog sled in Greenland, watch the moon rise from the top of Kilimanjaro, and laze on the French Riviera</span></a>.
-	    What a clich&eacute;.
-	  </p>
-	</div>
+    	<div class="span7">
+    	  <p>Lives
+    	    <a href="#" class="expand">here<span>. As of February 2012 he can be found in Wellington, New Zealand</span></a>.
+    	    This particular Andrew holds a doctorate in <a href="#" class="expand"><span>condensed matter </span>physics</a>
+    	    and has three passports. He claims to be a fan of
+    	    <a href="#" class="expand">good food<span> and cooking with friends and family</span></a>,
+    	    <a href="#" class="expand">red wine<span>, a Central Otago pinot noir perhaps</span></a>,
+    	    <a href="#" class="expand">beautiful prose<span> as exemplified by <em>The Quiet Girl</em> by Peter Hoeg, <em>Tender is the Night</em> by F. Scott Fitzgerald, and <em>East of Eden</em> by John Steinbeck</span></a>,
+    	    <a href="#" class="expand">competitive sport<span> and masters like the <em>New England Patriots</em>, the <em>Detroit Red Wings</em>, and <em>Roger Federer</em></span></a>,
+    	    <a href="#" class="expand">new ideas<span> and thus everything <em>Robin Hanson</em> writes</span></a>,
+    	    <a href="#" class="expand">light planes<span> (about fifteen hours logged)</span></a>,
+    	    <a href="#" class="expand">and travel<span>. He intends to see the Northern Lights from a dog sled in Greenland, watch the moon rise from the top of Kilimanjaro, and laze on the French Riviera</span></a>.
+    	    What a clich&eacute;.
+    	  </p>
+    	</div>
       </div>
 
       <div class="row">
-	<div class="span10">
-	  <ul class="hero">
-	    <li><span>Email:</span>
-	      <ul class="inline">
-		<li><a href="mailto:andrew@preston.co.nz">andrew@preston.co.nz</a></li>
-		<li><a href="mailto:andrew.preston@gmail.com">andrew.preston@gmail.com</a></li>
-		<li><a href="mailto:andrew@publons.com">andrew@publons.com</a></li>
-	      </ul>
-	    </li>
-	    <li><span>R&eacute;sum&eacute;:</span>
-	      <ul class="inline">
-		<li><a href="pubs/Andrew Preston CV.pdf">January 2012</a></li>
-	      </ul>
-	    </li>
-	    <li><span>Online:</span>
-	      <ul class="inline">
-		<li><a href="http://www.facebook.com/andrew.preston">Facebook</a></li>
-		<li><a href="http://www.google.com/profiles/andrew.preston">Google</a></li>
-		<li><a href="http://www.linkedin.com/pub/andrew-preston/29/8aa/2a7">LinkedIn</a></li>
-		<li><a href="https://twitter.com/#!/arhpreston">Twitter</a></li>
-		<li><a href="https://github.com/arhpreston">Github</a></li>
-		<li><a href="http://www.flickr.com/photos/arhpreston/">Flickr</a></li>
-		<li><a href="http://andrew.preston.myopenid.com/">OpenID</a></li>
-	      </ul>
-	    </li>
-	  </ul>
-	</div>
+    	<div class="span10">
+    	  <ul class="hero">
+    	    <li><span>Email:</span>
+    	      <ul class="inline">
+    		<li><a href="mailto:andrew@preston.co.nz">andrew@preston.co.nz</a></li>
+    		<li><a href="mailto:andrew.preston@gmail.com">andrew.preston@gmail.com</a></li>
+    		<li><a href="mailto:andrew@publons.com">andrew@publons.com</a></li>
+    	      </ul>
+    	    </li>
+    	    <li><span>R&eacute;sum&eacute;:</span>
+    	      <ul class="inline">
+    		<li><a href="pubs/Andrew Preston CV.pdf">January 2012</a></li>
+    	      </ul>
+    	    </li>
+    	    <li><span>Online:</span>
+    	      <ul class="inline">
+    		<li><a href="http://www.facebook.com/andrew.preston">Facebook</a></li>
+    		<li><a href="http://www.google.com/profiles/andrew.preston">Google</a></li>
+    		<li><a href="http://www.linkedin.com/pub/andrew-preston/29/8aa/2a7">LinkedIn</a></li>
+    		<li><a href="https://twitter.com/#!/arhpreston">Twitter</a></li>
+    		<li><a href="https://github.com/arhpreston">Github</a></li>
+    		<li><a href="http://www.flickr.com/photos/arhpreston/">Flickr</a></li>
+    		<li><a href="http://andrew.preston.myopenid.com/">OpenID</a></li>
+    	      </ul>
+    	    </li>
+    	  </ul>
+    	</div>
       </div>
       
     </div>
 
     <div class="row scroll-fix">
-	<div class="span12">
-    	  <ul class="nav nav-pills">
-	    <li><a href="#top"><i class="icon-home"></i></a></li>
-	    <li><a href="#my-projects">Projects</a></li>
-	    <li><a href="#my-publications">Publications</a></li>
-	    <li><a href="#my-presentations">Presentations</a></li>
-	  </ul>
-	  </div>
+      <div class="span12">
+    	<ul class="nav nav-pills">
+	  <li><a href="#top"><i class="icon-home"></i></a></li>
+	  <li><a href="#my-projects">Projects</a></li>
+	  <li><a href="#my-publications">Publications</a></li>
+	  <li><a href="#my-presentations">Presentations</a></li>
+	</ul>
+      </div>
     </div>
+
 
     <section id="my-projects">
       <div class="page-header">
@@ -578,12 +580,19 @@ $( "a.expand" ).click( function(event) {
      * Expands a span contained within a link. Makes for a nice effect
      * in what would otherwise be a ridiculously long and
      * parenthesized paragraph.
+     *
+     * If this increases the vertical height of the container div, and
+     * if there is a scroll-fix element below it, then the scroll-fix
+     * will look a little weird because $( ".scroll-fix" ).offset() is
+     * fixed when the page loads. It's a minor issue, so I'll ignore
+     * it for now.
      */
     event.preventDefault();
     
     $(this)
 	.toggleClass( "active" )
 	.children( "span" ).toggle();
+
 });
 				
   </script>
