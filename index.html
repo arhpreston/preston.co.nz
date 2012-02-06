@@ -4,7 +4,7 @@
 <head>
   <title>Andrew Preston | preston.co.nz</title>
 
-  <link rel="SHORTCUT ICON" href="favicon.ico"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <meta name="google-site-verification" content="aiH7IWDtbHGU05nnqrEhI1R4UYBNHx0pP3Pi5txioS0" />
 
@@ -14,6 +14,7 @@
   <link rel="openid2.provider" href="http://www.myopenid.com/server" />
   <meta http-equiv="X-XRDS-Location" content="http://www.myopenid.com/xrds?username=Andrew.Preston.myopenid.com" />
 
+  <link rel="shortcut icon" href="favicon.ico"/>
   <link href="static/bootstrap/css/bootstrap.css" rel="stylesheet" />
   <link href="static/bootstrap/css/bootstrap-responsive.css" rel="stylesheet" />
   <style type="text/css">
@@ -38,11 +39,13 @@
 
     /* Need to make the following responsive
      *   => .well { padding:19px; border: 1px solid; } (40 extra pixels)
-     *   => some table columns shouldn't wrap on larger displays
+     *   => some table columns shouldn't wrap on larger displays, shouldn't show on smaller displays
      *   => inline lists look horrible at small screen widths
      */
     @media (max-width: 480px) {}
     @media (max-width: 768px) {
+	.hero-unit { padding:10px; }
+	.nowrap { display:none; }
 	.scroll-fix { display:none; }
     	div[class~=well][class~=span4] { margin-bottom:20px; } /* was 228px */ }
     @media (min-width: 768px) {
@@ -55,10 +58,8 @@
     @media (min-width: 768px) and (max-width: 980px) {
 	div[class~=well][class~=span4] { width:188px; } /* was 228px */ }
     @media (min-width: 980px) {
-	.nowrap { white-space:nowrap; }
     	div[class~=well][class~=span4] { width:260px; } /* was 300px */ }
     @media (min-width: 1200px) {
-	.nowrap { white-space:nowrap; }
     	div[class~=well][class~=span4] { width:330px; } /* was 370px */ }
 
   </style>
@@ -84,7 +85,7 @@
     	    <a href="#" class="expand">good food<span> and cooking with friends and family</span></a>,
     	    <a href="#" class="expand">red wine<span>, a Central Otago pinot noir perhaps</span></a>,
     	    <a href="#" class="expand">beautiful prose<span> as exemplified by <em>The Quiet Girl</em> by Peter Hoeg, <em>Tender is the Night</em> by F. Scott Fitzgerald, and <em>East of Eden</em> by John Steinbeck</span></a>,
-    	    <a href="#" class="expand">competitive sport<span> and masters like the <em>New England Patriots</em>, the <em>Detroit Red Wings</em>, and <em>Roger Federer</em></span></a>,
+    	    <a href="#" class="expand">competitive sport<span> and dynasties like the <em>New England Patriots</em>, the <em>Detroit Red Wings</em>, and <em>Roger Federer</em></span></a>,
     	    <a href="#" class="expand">new ideas<span> and thus everything <em>Robin Hanson</em> writes</span></a>,
     	    <a href="#" class="expand">light planes<span> (about fifteen hours logged)</span></a>,
     	    <a href="#" class="expand">and travel<span>. He intends to see the Northern Lights from a dog sled in Greenland, watch the moon rise from the top of Kilimanjaro, and laze on the French Riviera</span></a>.
@@ -105,7 +106,7 @@
     	    </li>
     	    <li><span>R&eacute;sum&eacute;:</span>
     	      <ul class="inline">
-    		<li><a href="pubs/Andrew Preston CV.pdf">January 2012</a></li>
+    		<li><a href="pubs/Andrew Preston CV.pdf">February 2012</a></li>
     	      </ul>
     	    </li>
     	    <li><span>Online:</span>
@@ -127,7 +128,7 @@
 
     <div class="row scroll-fix">
       <div class="span12">
-    	<ul class="nav nav-pills">
+    	<ul class="nav nav-pills nav-collapse">
 	  <li><a href="#top"><i class="icon-home"></i></a></li>
 	  <li><a href="#my-projects">Projects</a></li>
 	  <li><a href="#my-publications">Publications</a></li>
@@ -530,9 +531,9 @@
 	<small>John Steinbeck</small>
       </blockquote>
       
-      <p>This page is built on
-      of <a href="http://twitter.github.com/bootstrap/">bootstrap</a>
-      and <a href="http://jquery.com/">jQuery</a>.</p>
+      <p class="pull-left">Built with
+	<a href="http://twitter.github.com/bootstrap/">bootstrap</a>
+	and <a href="http://jquery.com/">jQuery</a>.</p>
     </footer>
     
   </div>
@@ -584,8 +585,11 @@ $( "a.expand" ).click( function(event) {
      * If this increases the vertical height of the container div, and
      * if there is a scroll-fix element below it, then the scroll-fix
      * will look a little weird because $( ".scroll-fix" ).offset() is
-     * fixed when the page loads. It's a minor issue, so I'll ignore
-     * it for now.
+     * calculated when the page loads. It's a minor issue, so I'll
+     * ignore it for now.
+     *
+     * It can probably be fixed by calulating the offset of the
+     *.parent().after() element before and after a toggle.
      */
     event.preventDefault();
     
