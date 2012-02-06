@@ -126,8 +126,7 @@
       
     </div>
 
-<div class="row">
-    <div class="scroll-fix">
+    <div class="row scroll-fix">
       <div class="span12">
     	<ul class="nav nav-pills nav-collapse">
 	  <li><a href="#top"><i class="icon-home"></i></a></li>
@@ -137,7 +136,6 @@
 	</ul>
       </div>
     </div>
-</div>
 
     <section id="my-projects">
       <div class="page-header">
@@ -587,9 +585,9 @@ $.fn.scrollFix = function() {
 	 * the page loads.
 	 *
 	 * I work around this by calculating the position of the
-	 *footer (presumably near the bottom of the page) after each
-	 *click. The difference between this position and the position
-	 *on page load is then added to navTop.
+	 * footer (presumably near the bottom of the page) after each
+	 * click. The difference between this position and the
+	 * position on page load is then added to navTop.
 	 */
 	delta = $("footer").offset().top - $nav.data( 'foot' );
     };
