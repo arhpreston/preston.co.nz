@@ -22,13 +22,12 @@
     body { padding-top: 20px; padding-bottom: 40px; }
 
     /* Basic layout for the overview section at the top of the page */
-    .hero-unit { padding:30px 60px 30px 60px; } /* default = 60px
+    .hero-unit { padding:30px 60px 30px 60px; margin-bottom:0; } /* default = 60px
 
     /* Used to fix navbar in place as we scoll */
     .scroll-fix div ul {
-	padding-left:60px; background-color: whiteSmoke; z-index:100;
-	border-radius:6px; -webkit-border-radius:6px; -moz-border-radius:6px; }
-    .scroll-fix-fixed { position:fixed; top:0; }
+	padding-left:60px; background-color: whiteSmoke; z-index:100; }
+    .scroll-fix-fixed div { position:fixed; top:0; }
 
     /* Effect to allow expansion of hidden sentences in text */
     a.expand:hover { text-decoration:none; }
@@ -65,7 +64,7 @@
   </style>
 </head>
 
-<body id="top" data-spy="scroll" data-target=".scroll-fix" data-offset="80">
+<body id="top" data-spy="scroll" data-target=".scroll-fix" data-offset="48"><!-- 48px because .page-header.height is 48px -->
 
   <div class="container">
 
@@ -544,63 +543,47 @@
 $.fn.scrollFix = function() {
     /*
      * jQuery plugin to fix an element at the top of the page as the
-     * window scrolls past it. This borrows heavily from the code in
-     * the bootstrap examples.
+     * window scrolls past it. This borrows heavily from the bootstrap
+     * documentation page.
+     *
+     * Assumes the following html structure:
+     *   <div class="scroll-fix">
+     *     <div>
+     *       {content}
      */
     
-    var $nav = this; // element to fix in place
+    var $scrollFix = this; // element to fix in place
 
-    $nav.data( 'navTop', $nav.length && $nav.offset().top );
-    $nav.data( 'isFixed', 0 );
-
-    $nav.data( 'foot', $( "footer" ).offset().top );
-
-    var offset = 40;
-    var delta = 0;
+    // Ensure that ".scroll-fix" and ".scroll-fix div" are the same
+    // height. This stops the page from jumping around when we fix
+    // ".scroll-fix div" in place
+    $scrollFix.height( $scrollFix.children('div').height() );
     
-    processScroll();
-
     $(window).on('scroll', processScroll);
-    $(window).on('click', processClick);
-
+    
     function processScroll() {
-	var scrollTop = $(window).scrollTop()
-	var navTop = $nav.data('navTop') + delta - offset;
-	var isFixed = $nav.data('isFixed');
+	var scrollTop = $(window).scrollTop(); // body position at top of window
+	var elemTop = $scrollFix.offset().top; // position of elem from top of body
+	var isFixed = $scrollFix.data('isFixed');
 
-	if (scrollTop >= navTop && !isFixed) {
-            $nav.data('isFixed', 1);
-            $nav.addClass('scroll-fix-fixed');
-	} else if (scrollTop <= navTop && isFixed) {
-            $nav.data('isFixed', 0);
-            $nav.removeClass('scroll-fix-fixed');
+	if (scrollTop >= elemTop && !isFixed) {
+            $scrollFix.data('isFixed', 1);
+            $scrollFix.addClass('scroll-fix-fixed');
+	} else if (scrollTop <= elemTop && isFixed) {
+            $scrollFix.data('isFixed', 0);
+            $scrollFix.removeClass('scroll-fix-fixed');
 	}
     }
 
-    function processClick() {
-	/*
-	 * If the vertical height of some element above the scroll-fix
-	 * changes then the scroll-fix will become fixed at the wrong
-	 * time because $( ".scroll-fix" ).offset() is calculated when
-	 * the page loads.
-	 *
-	 * I work around this by calculating the position of the
-	 * footer (presumably near the bottom of the page) after each
-	 * click. The difference between this position and the
-	 * position on page load is then added to navTop.
-	 */
-	delta = $("footer").offset().top - $nav.data( 'foot' );
-    };
-    
-    return $nav;
+    return this;
 }
+
 $( ".scroll-fix" ).scrollFix();
 				
 $( "a.expand" ).click( function(event) {
     /*
      * Expands a span contained within a link. Makes for a nice effect
-     * in what would otherwise be a ridiculously long and
-     * parenthesized paragraph.
+     * in what would otherwise be a ridiculously long paragraph.
      */
     event.preventDefault();
 
