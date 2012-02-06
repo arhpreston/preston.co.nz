@@ -126,7 +126,8 @@
       
     </div>
 
-    <div class="row scroll-fix">
+<div class="row">
+    <div class="scroll-fix">
       <div class="span12">
     	<ul class="nav nav-pills nav-collapse">
 	  <li><a href="#top"><i class="icon-home"></i></a></li>
@@ -136,7 +137,7 @@
 	</ul>
       </div>
     </div>
-
+</div>
 
     <section id="my-projects">
       <div class="page-header">
@@ -551,18 +552,24 @@ $.fn.scrollFix = function() {
     
     var $nav = this; // element to fix in place
 
-    $nav.data( 'navTop', $nav.length && $nav.offset().top - 40 );
+    $nav.data( 'navTop', $nav.length && $nav.offset().top );
     $nav.data( 'isFixed', 0 );
 
-    processScroll()
+    $nav.data( 'foot', $( "footer" ).offset().top );
 
-    $(window).on('scroll', processScroll)
+    var offset = 40;
+    var delta = 0;
+    
+    processScroll();
+
+    $(window).on('scroll', processScroll);
+    $(window).on('click', processClick);
 
     function processScroll() {
 	var scrollTop = $(window).scrollTop()
-	var navTop = $nav.data('navTop');
+	var navTop = $nav.data('navTop') + delta - offset;
 	var isFixed = $nav.data('isFixed');
-	
+
 	if (scrollTop >= navTop && !isFixed) {
             $nav.data('isFixed', 1);
             $nav.addClass('scroll-fix-fixed');
@@ -572,6 +579,21 @@ $.fn.scrollFix = function() {
 	}
     }
 
+    function processClick() {
+	/*
+	 * If the vertical height of some element above the scroll-fix
+	 * changes then the scroll-fix will become fixed at the wrong
+	 * time because $( ".scroll-fix" ).offset() is calculated when
+	 * the page loads.
+	 *
+	 * I work around this by calculating the position of the
+	 *footer (presumably near the bottom of the page) after each
+	 *click. The difference between this position and the position
+	 *on page load is then added to navTop.
+	 */
+	delta = $("footer").offset().top - $nav.data( 'foot' );
+    };
+    
     return $nav;
 }
 $( ".scroll-fix" ).scrollFix();
@@ -581,22 +603,12 @@ $( "a.expand" ).click( function(event) {
      * Expands a span contained within a link. Makes for a nice effect
      * in what would otherwise be a ridiculously long and
      * parenthesized paragraph.
-     *
-     * If this increases the vertical height of the container div, and
-     * if there is a scroll-fix element below it, then the scroll-fix
-     * will look a little weird because $( ".scroll-fix" ).offset() is
-     * calculated when the page loads. It's a minor issue, so I'll
-     * ignore it for now.
-     *
-     * It can probably be fixed by calulating the offset of the
-     *.parent().after() element before and after a toggle.
      */
     event.preventDefault();
-    
+
     $(this)
 	.toggleClass( "active" )
 	.children( "span" ).toggle();
-
 });
 				
   </script>
