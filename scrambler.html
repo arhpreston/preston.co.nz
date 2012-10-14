@@ -8,6 +8,51 @@
     <link rel="shortcut icon" href="/favicon.ico" />
     <link href="/static/bootstrap/css/bootstrap.css" rel="stylesheet" />
     <link href="/static/bootstrap/css/bootstrap-responsive.css" rel="stylesheet" />
+    <style type="text/css">
+
+      body { padding-top: 20px; padding-bottom: 40px; }
+
+      /* Basic layout for the overview section at the top of the page */
+      .hero-unit { padding:30px 60px 30px 60px; margin-bottom:0; } /* default = 60px
+
+      /* Used to fix navbar in place as we scoll */
+      .scroll-fix div ul {
+      padding-left:60px; background-color: whiteSmoke; z-index:100; }
+      .scroll-fix-fixed div { position:fixed; top:0; }
+
+      /* Effect to allow expansion of hidden sentences in text */
+      a.expand:hover { text-decoration:none; }
+      a.expand span { display:none; }
+      a.expand { color:#370; }
+      a.expand.active { background-color:#ddd; }
+      a.expand.active span { color:#005580; color:#E8BE34; color:#730;}
+
+      /* Need to make the following responsive
+      *   => .well { padding:19px; border: 1px solid; } (40 extra pixels)
+      *   => some table columns shouldn't wrap on larger displays, shouldn't show on smaller displays
+      *   => inline lists look horrible at small screen widths
+      */
+      @media (max-width: 480px) {}
+      @media (max-width: 768px) {
+        .hero-unit { padding:10px; }
+        .nowrap { display:none; }
+        .scroll-fix { display:none; }
+        div[class~=well][class~=span4] { margin-bottom:20px; } /* was 228px */ }
+      @media (min-width: 768px) {
+        .nowrap { white-space:nowrap; }
+        ul.inline { display:inline; }
+        ul.inline li { display:inline; }
+        ul.inline li:after { content:" |"; }
+        ul.inline li:last-child:after { content:"."; }
+        ul.hero li span { display:inline-block; width:3em; } /* Align all sublists */ }
+      @media (min-width: 768px) and (max-width: 980px) {
+        div[class~=well][class~=span4] { width:188px; } /* was 228px */ }
+      @media (min-width: 980px) {
+        div[class~=well][class~=span4] { width:260px; } /* was 300px */ }
+      @media (min-width: 1200px) {
+        div[class~=well][class~=span4] { width:330px; } /* was 370px */ }
+
+    </style>
 
     <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>
     <script type="text/javascript" src="https://raw.github.com/arhpreston/scrambler/master/scrambler.js"></script>
@@ -51,10 +96,13 @@
               <li>
                 Board: <input type="text" id="board" value="ITOR,EPAG,SAIY,EREH" size="30" /></li>
               <li>
-                Double letters: <input type="text" id="dl" value="0, 5" size="5" />
-                Triple letters: <input type="text" id="tl" value="" size="5" />
-                Double words: <input type="text" id="dw" value="" size="5" />
-                Triple words: <input type="text" id="tw" value="" size="5" /></li>
+                <ul>
+                  <li>Double letters: <input type="text" id="dl" value="0, 5" size="5" /></li>
+                  <li>Triple letters: <input type="text" id="tl" value="" size="5" /></li>
+                  <li>Double words: <input type="text" id="dw" value="" size="5" /></li>
+                  <li>Triple words: <input type="text" id="tw" value="" size="5" /></li>
+                </ul>
+              </li>
               <li>
                 <button id="play">Play!</button></li>
               <li id="found_words"></li>
@@ -76,9 +124,12 @@
       $("#play").click(function() {
           $("#found_words")
               .html($("<table>")
-                    .append($("<tr>")
-                            .append("<th>Score</th>")
-                            .append("<th>Word</th>")));
+                    .attr("class", "table table-condensed table-striped")
+                    .append($("<thead>")
+                            .append($("<tr>")
+                                    .append("<th>Score</th>")
+                                    .append("<th>Word</th>")))
+                    .append($("tbody>")));
 
           var input = $("#board").val();
           var bonus_squares = {
@@ -99,7 +150,7 @@
           });
 
           $(sortable_words).each(function(i) {
-              $("#found_words table")
+              $("#found_words table tbody")
                   .append($("<tr>")
                           .append($("<td>")
                                   .append(sortable_words[i][0]))
