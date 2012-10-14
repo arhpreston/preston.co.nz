@@ -94,8 +94,20 @@
 
             <ul>
               <li>
-                Board: <input type="text" id="board" value="ITOR,EPAG,SAIY,EREH" size="30" /></li>
+                Board:
+                <input type="text" id="board" value="ITOR,EPAG,SAIY,EREH" size="30" />
+
+                <p>Input letters in the order:
+                  <pre>
+                    0  1  2  3
+                    4  5  6  7
+                    8  9 10 11
+                   12 13 14 15
+                  </pre>
+                </p>
+              </li>
               <li>
+                Bonus markers:
                 <ul>
                   <li>Double letters: <input type="text" id="dl" value="0, 5" size="5" /></li>
                   <li>Triple letters: <input type="text" id="tl" value="" size="5" /></li>
@@ -127,9 +139,10 @@
                     .attr("class", "table table-condensed table-striped")
                     .append($("<thead>")
                             .append($("<tr>")
+                                    .append("<th>#</th>")
                                     .append("<th>Score</th>")
                                     .append("<th>Word</th>")))
-                    .append($("tbody>")));
+                    .append($("<tbody>")));
 
           var input = $("#board").val();
           var bonus_squares = {
@@ -153,9 +166,11 @@
               $("#found_words table tbody")
                   .append($("<tr>")
                           .append($("<td>")
-                                  .append(sortable_words[i][0]))
+                                  .append(i))
                           .append($("<td>")
-                                  .append(sortable_words[i][1])));
+                                  .append(sortable_words[i][1]))
+                          .append($("<td>")
+                                  .append(sortable_words[i][0])));
           });
       });
 
