@@ -19,25 +19,58 @@
     </script>
   </head>
 
-  <body>
-    <h1>Scrambler</h1>
-    <p>
-      Calculate all the words on a scramble
-      board. See <a href="https://github.com/arhpreston/scrambler">github</a>
-      for details.
-    </p>
-    <ul>
-      <li>
-        Board: <input type="text" id="board" value="ITOR,EPAG,SAIY,EREH" size="30" /></li>
-      <li>
-        Double letters: <input type="text" id="dl" value="0, 5" size="5" />
-        Triple letters: <input type="text" id="tl" value="" size="5" />
-        Double words: <input type="text" id="dw" value="" size="5" />
-        Triple words: <input type="text" id="tw" value="" size="5" /></li>
-      <li>
-        <button id="play">Play!</button></li>
-      <li id="found_words"></li>
-    </ul>
+  <body id="top" data-spy="scroll" data-target=".scroll-fix" data-offset="48"><!-- 48px because .page-header.height is 48px -->
+
+    <div class="container">
+
+      <div class="row scroll-fix">
+        <div class="span12">
+          <ul class="nav nav-pills nav-collapse">
+            <li><a href="/"><i class="icon-home"></i></a></li>
+            <li><a href="/#my-projects">Projects</a></li>
+            <li><a href="/#my-publications">Publications</a></li>
+            <li><a href="/#my-presentations">Presentations</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <section id="my-projects">
+        <div class="page-header">
+          <h1>Scrambler</h1>
+        </div>
+
+        <div class="row">
+          <div class="span5">
+            <p>
+              Calculate all the words on a scramble
+              board. See <a href="https://github.com/arhpreston/scrambler">github</a>
+              for details.
+            </p>
+
+            <ul>
+              <li>
+                Board: <input type="text" id="board" value="ITOR,EPAG,SAIY,EREH" size="30" /></li>
+              <li>
+                Double letters: <input type="text" id="dl" value="0, 5" size="5" />
+                Triple letters: <input type="text" id="tl" value="" size="5" />
+                Double words: <input type="text" id="dw" value="" size="5" />
+                Triple words: <input type="text" id="tw" value="" size="5" /></li>
+              <li>
+                <button id="play">Play!</button></li>
+              <li id="found_words"></li>
+            </ul>
+      </section>
+
+      <hr />
+
+      <footer class="footer">
+        <p class="pull-right"><em>by</em> Andrew Preston</p>
+        <p class="pull-left">Built with
+          <a href="http://twitter.github.com/bootstrap/">bootstrap</a>
+          and <a href="http://jquery.com/">jQuery</a>.</p>
+      </footer>
+
+    </div>
 
     <script>
       $("#play").click(function() {
@@ -74,6 +107,59 @@
                                   .append(sortable_words[i][1])));
           });
       });
+
+$.fn.scrollFix = function() {
+    /*
+     * jQuery plugin to fix an element at the top of the page as the
+     * window scrolls past it. This borrows heavily from the bootstrap
+     * documentation page.
+     *
+     * Assumes the following html structure:
+     *   <div class="scroll-fix">
+     *     <div>
+     *       {content}
+     */
+
+    var $scrollFix = this; // element to fix in place
+
+    // Ensure that ".scroll-fix" and ".scroll-fix div" are the same
+    // height. This stops the page from jumping around when we fix
+    // ".scroll-fix div" in place
+    $scrollFix.height( $scrollFix.children('div').height() );
+
+    $(window).on('scroll', processScroll);
+
+    function processScroll() {
+        var scrollTop = $(window).scrollTop(); // body position at top of window
+        var elemTop = $scrollFix.offset().top; // position of elem from top of body
+        var isFixed = $scrollFix.data('isFixed');
+
+        if (scrollTop >= elemTop && !isFixed) {
+            $scrollFix.data('isFixed', 1);
+            $scrollFix.addClass('scroll-fix-fixed');
+        } else if (scrollTop <= elemTop && isFixed) {
+            $scrollFix.data('isFixed', 0);
+            $scrollFix.removeClass('scroll-fix-fixed');
+        }
+    }
+
+    return this;
+}
+
+$( ".scroll-fix" ).scrollFix();
+
+$( "a.expand" ).click( function(event) {
+    /*
+     * Expands a span contained within a link. Makes for a nice effect
+     * in what would otherwise be a ridiculously long paragraph.
+     */
+    event.preventDefault();
+
+    $(this)
+        .toggleClass( "active" )
+        .children( "span" ).toggle();
+});
+
     </script>
   </body>
 </html>
