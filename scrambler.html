@@ -1,0 +1,79 @@
+<html>
+
+  <head>
+    <title>Scrambler | preston.co.nz</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link href="/static/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="/static/bootstrap/css/bootstrap-responsive.css" rel="stylesheet" />
+
+    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="https://raw.github.com/arhpreston/scrambler/master/scrambler.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+          var dictionaryUrl = "/static/TWL06.txt";
+          init_dictionary(dictionaryUrl);
+      });
+    </script>
+  </head>
+
+  <body>
+    <h1>Scrambler</h1>
+    <p>
+      Calculate all the words on a scramble
+      board. See <a href="https://github.com/arhpreston/scrambler">github</a>
+      for details.
+    </p>
+    <ul>
+      <li>
+        Board: <input type="text" id="board" value="ITOR,EPAG,SAIY,EREH" size="30" /></li>
+      <li>
+        Double letters: <input type="text" id="dl" value="0, 5" size="5" />
+        Triple letters: <input type="text" id="tl" value="" size="5" />
+        Double words: <input type="text" id="dw" value="" size="5" />
+        Triple words: <input type="text" id="tw" value="" size="5" /></li>
+      <li>
+        <button id="play">Play!</button></li>
+      <li id="found_words"></li>
+    </ul>
+
+    <script>
+      $("#play").click(function() {
+          $("#found_words")
+              .html($("<table>")
+                    .append($("<tr>")
+                            .append("<th>Score</th>")
+                            .append("<th>Word</th>")));
+
+          var input = $("#board").val();
+          var bonus_squares = {
+              "dl": $.parseJSON("[" + $("#dl").val() + "]"),
+              "tl": $.parseJSON("[" + $("#tl").val() + "]"),
+              "dw": $.parseJSON("[" + $("#dw").val() + "]"),
+              "tw": $.parseJSON("[" + $("#tw").val() + "]"),
+          };
+          var found_words = scramble(input, bonus_squares);
+
+          var sortable_words = [];
+          for (var word in found_words) {
+              sortable_words.push([word, found_words[word]]);
+          };
+          sortable_words.sort(function(a, b) {
+              // Sort from largest score to smallest
+              return b[1] - a[1];
+          });
+
+          $(sortable_words).each(function(i) {
+              $("#found_words table")
+                  .append($("<tr>")
+                          .append($("<td>")
+                                  .append(sortable_words[i][0]))
+                          .append($("<td>")
+                                  .append(sortable_words[i][1])));
+          });
+      });
+    </script>
+  </body>
+</html>
