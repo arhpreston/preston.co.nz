@@ -7,53 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="shortcut icon" href="/favicon.ico" />
-  <link href="/static/bootstrap/css/bootstrap.css" rel="stylesheet" />
-  <link href="/static/bootstrap/css/bootstrap-responsive.css" rel="stylesheet" />
-  <style type="text/css">
-    
-    body { padding-top: 20px; padding-bottom: 40px; }
-
-    /* Basic layout for the overview section at the top of the page */
-    .hero-unit { padding:30px 60px 30px 60px; margin-bottom:0; } /* default = 60px
-
-    /* Used to fix navbar in place as we scoll */
-    .scroll-fix div ul {
-	padding-left:60px; background-color: whiteSmoke; z-index:100; }
-    .scroll-fix-fixed div { position:fixed; top:0; }
-
-    /* Effect to allow expansion of hidden sentences in text */
-    a.expand:hover { text-decoration:none; }
-    a.expand span { display:none; }
-    a.expand { color:#370; }
-    a.expand.active { background-color:#ddd; }
-    a.expand.active span { color:#005580; color:#E8BE34; color:#730;}
-
-    /* Need to make the following responsive
-     *   => .well { padding:19px; border: 1px solid; } (40 extra pixels)
-     *   => some table columns shouldn't wrap on larger displays, shouldn't show on smaller displays
-     *   => inline lists look horrible at small screen widths
-     */
-    @media (max-width: 480px) {}
-    @media (max-width: 768px) {
-	.hero-unit { padding:10px; }
-	.nowrap { display:none; }
-	.scroll-fix { display:none; }
-    	div[class~=well][class~=span4] { margin-bottom:20px; } /* was 228px */ }
-    @media (min-width: 768px) {
-	.nowrap { white-space:nowrap; }
-	ul.inline { display:inline; }
-	ul.inline li { display:inline; }
-	ul.inline li:after { content:" |"; }
-	ul.inline li:last-child:after { content:"."; }
-	ul.hero li span { display:inline-block; width:3em; } /* Align all sublists */ }
-    @media (min-width: 768px) and (max-width: 980px) {
-	div[class~=well][class~=span4] { width:188px; } /* was 228px */ }
-    @media (min-width: 980px) {
-    	div[class~=well][class~=span4] { width:260px; } /* was 300px */ }
-    @media (min-width: 1200px) {
-    	div[class~=well][class~=span4] { width:330px; } /* was 370px */ }
-
-  </style>
+  <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/css/bootstrap-combined.min.css" rel="stylesheet">
+  <link href="/static/main.css" rel="stylesheet" />
 </head>
 
 <body id="top" data-spy="scroll" data-target=".scroll-fix" data-offset="48"><!-- 48px because .page-header.height is 48px -->
@@ -62,299 +17,235 @@
 
     <div class="row scroll-fix">
       <div class="span12">
-    	<ul class="nav nav-pills nav-collapse">
-	  <li><a href="/"><i class="icon-home"></i></a></li>
-	  <li><a href="/#my-projects">Projects</a></li>
-	  <li><a href="/#my-publications">Publications</a></li>
-	  <li><a href="/#my-presentations">Presentations</a></li>
-	</ul>
+        <ul class="nav nav-pills nav-collapse">
+          <li><a href="/"><i class="icon-home"></i></a></li>
+          <li><a href="/#my-projects">Projects</a></li>
+          <li><a href="/#my-publications">Publications</a></li>
+          <li><a href="/#my-presentations">Presentations</a></li>
+        </ul>
       </div>
     </div>
 
-    <section id="my-projects">
+    <section id="content">
       <div class="page-header">
-	<h1>Do emerging scientists have a future in New Zealand?</h1>
+        <h1>Do emerging scientists have a future in New Zealand?</h1>
       </div>
 
       <div class="row">
-	<div class="span5">
-	  <p><em>This talk was originally delivered at the NZAS
-	  conference in April 2012.</em></p>
-	  
-	  <p>When we ask if emerging scientists have a future in New
-	  Zealand I think we're really asking a few separate, but
-	  related questions. I sometimes wonder, especially in the
-	  context of a conference like this, if we're making implicit
-	  assumptions about the answer to each of them, so I'm going
-	  to try to separate them out and answer them
-	  individually. First, we're asking if emerging scientists
-	  actually want a future in New Zealand. Assuming they do,
-	  we're asking if they can actually have a future
-	  here. Finally, we're asking how we can help to make it
-	  happen.</p>
+        <div class="span5">
+          <p><em>This talk was originally delivered at the NZAS
+          conference in April 2012.</em></p>
 
-	  <p>We can ask those questions in a couple of different
-	  ways. We can ask if, in terms of public policy, we want
-	  emerging scientists to have a future in New Zealand, if can
-	  we make that happen, and how to ensure it happens. We can
-	  also ask those same questions on a personal level. Do
-	  emerging scientists, like you or I, actually want a future
-	  here? And if so, can we make it happen?</p>
+          <p>When we ask if emerging scientists have a future in New
+          Zealand I think we're really asking a few separate, but
+          related questions. I sometimes wonder, especially in the
+          context of a conference like this, if we're making implicit
+          assumptions about the answer to each of them, so I'm going
+          to try to separate them out and answer them
+          individually. First, we're asking if emerging scientists
+          actually want a future in New Zealand. Assuming they do,
+          we're asking if they can actually have a future
+          here. Finally, we're asking how we can help to make it
+          happen.</p>
 
-	  <p>Let's talk public policy for a minute. I'm sure that at
-	  some point today someone has presented a set of numbers and
-	  figures to the effect that an emerging scientist is a public
-	  good; each additional scientist in New Zealand confers some
-	  large (but hard to measure) benefit to the country as a
-	  whole. I'm sure they also provided evidence that the cost of
-	  convincing scientists to stay is much less than the
-	  return. If you haven't heard that here today, then you will
-	  have heard it elsewhere. Paul Callaghan, for example,
-	  discussed this extensively in Wool to Weta
-	  [<a href="#fn:1">1</a>]. I don't disagree. Numbers never
-	  lie. However, one thing I rarely hear discussed is the
-	  opportunity cost. Scientists are smart people, and they
-	  would be smart people even if they weren't scientists. When
-	  we convince someone to work in the basic sciences we're also
-	  convincing them not to work on something else. What, I
-	  wonder, are we giving up?</p>
+          <p>We can ask those questions in a couple of different
+          ways. We can ask if, in terms of public policy, we want
+          emerging scientists to have a future in New Zealand, if can
+          we make that happen, and how to ensure it happens. We can
+          also ask those same questions on a personal level. Do
+          emerging scientists, like you or I, actually want a future
+          here? And if so, can we make it happen?</p>
 
-	  <p>I don't have an answer to that. It's just a thought.</p>
+          <p>Let's talk public policy for a minute. I'm sure that at
+          some point today someone has presented a set of numbers and
+          figures to the effect that an emerging scientist is a public
+          good; each additional scientist in New Zealand confers some
+          large (but hard to measure) benefit to the country as a
+          whole. I'm sure they also provided evidence that the cost of
+          convincing scientists to stay is much less than the
+          return. If you haven't heard that here today, then you will
+          have heard it elsewhere. Paul Callaghan, for example,
+          discussed this extensively in Wool to Weta
+          [<a href="#fn:1">1</a>]. I don't disagree. Numbers never
+          lie. However, one thing I rarely hear discussed is the
+          opportunity cost. Scientists are smart people, and they
+          would be smart people even if they weren't scientists. When
+          we convince someone to work in the basic sciences we're also
+          convincing them not to work on something else. What, I
+          wonder, are we giving up?</p>
 
-	  <p>What I actually want to discuss today is the personal
-	  side of all this. So you understand where I'm coming from
-	  I'm going to tell you a bit about myself. I was born in
-	  South Africa and moved here when I was nine. I grew up in a
-	  town called Whakatane and moved to Wellington for
-	  university. I stayed for a PhD and then moved to Boston
-	  University to do a postdoc. Last year I quit my job and
-	  moved back here to start a company.</p>
+          <p>I don't have an answer to that. It's just a thought.</p>
 
-	  <p>Technically that probably means I'm not an emerging
-	  scientist anymore, but I do know what it's like to leave New
-	  Zealand, and what it's like to return. Also, I am working in
-	  a related field. Let me tell you a little about my company,
-	  Publons [<a href="#fn:2">2</a>]. Basically, we scientists
-	  prove our value with what we publish. A good publication
-	  record is the bedrock for any job or grant application. I'm
-	  sure you all agree that system is not perfect but, like
-	  democracy, it's the least bad system we've tried. Actually
-	  that's not true. We haven't tried any other systems. The
-	  basic technology we use to publish and review scientific
-	  research hasn't really changed in the three hundred plus
-	  years since the Royal Society started the first journal.</p>
+          <p>What I actually want to discuss today is the personal
+          side of all this. So you understand where I'm coming from
+          I'm going to tell you a bit about myself. I was born in
+          South Africa and moved here when I was nine. I grew up in a
+          town called Whakatane and moved to Wellington for
+          university. I stayed for a PhD and then moved to Boston
+          University to do a postdoc. Last year I quit my job and
+          moved back here to start a company.</p>
 
-	  <p>Publons is an attempt to change that. It's an experiment
-	  at allowing you to rate, review, and discuss any publication
-	  in any journal in one place, and an attempt to decouple your
-	  reputation as a scientist from journals and journal
-	  articles. I want to emphasize the experimental part of this
-	  project. We really are trying to approach this as a way to
-	  test a hypothesis. I doubt that would come naturally to me
-	  without a background in science. In that sense it's an
-	  example of how it's possible to do science without doing
-	  "science".</p>
+          <p>Technically that probably means I'm not an emerging
+          scientist anymore, but I do know what it's like to leave New
+          Zealand, and what it's like to return. Also, I am working in
+          a related field. Let me tell you a little about my company,
+          Publons [<a href="#fn:2">2</a>]. Basically, we scientists
+          prove our value with what we publish. A good publication
+          record is the bedrock for any job or grant application. I'm
+          sure you all agree that system is not perfect but, like
+          democracy, it's the least bad system we've tried. Actually
+          that's not true. We haven't tried any other systems. The
+          basic technology we use to publish and review scientific
+          research hasn't really changed in the three hundred plus
+          years since the Royal Society started the first journal.</p>
 
-	  <p>Anyway, publons.com. Please take a look. If you have any
-	  thoughts or suggestions then I'd love to hear them.</p>
+          <p>Publons is an attempt to change that. It's an experiment
+          at allowing you to rate, review, and discuss any publication
+          in any journal in one place, and an attempt to decouple your
+          reputation as a scientist from journals and journal
+          articles. I want to emphasize the experimental part of this
+          project. We really are trying to approach this as a way to
+          test a hypothesis. I doubt that would come naturally to me
+          without a background in science. In that sense it's an
+          example of how it's possible to do science without doing
+          "science".</p>
 
-	  <p>Ok, with that out of the way, let's get back to the
-	  original question: do emerging scientists want a future in
-	  New Zealand. I don't, not particularly. New Zealand is a
-	  beautiful place, and Wellington is a great city. My family
-	  is here and a lot of my friends are here; I'll always spend
-	  time here. However, New Zealand is a beautiful place in a
-	  world full of beautiful places, and Wellington is a great
-	  city in a world that contains Copenhagen, Barcelona, Cape
-	  Town, San Francisco, Boston, Chicago, New York, Shanghai,
-	  London, and Tokyo. In an ideal world I'd get to experience
-	  living in all of those places. And in a log cabin in the
-	  mountains of Montana.</p>
+          <p>Anyway, publons.com. Please take a look. If you have any
+          thoughts or suggestions then I'd love to hear them.</p>
 
-	  <p>However, I'm willing to accept that I'm in the
-	  minority. A good friend of mine just moved here because he
-	  fell for Wellington during a visit. I work with some people
-	  that moved back here from Hong Kong specifically because
-	  they wanted to live in Wellington. There seem to be a lot of
-	  emerging scientists that do want a future in New
-	  Zealand.</p>
+          <p>Ok, with that out of the way, let's get back to the
+          original question: do emerging scientists want a future in
+          New Zealand. I don't, not particularly. New Zealand is a
+          beautiful place, and Wellington is a great city. My family
+          is here and a lot of my friends are here; I'll always spend
+          time here. However, New Zealand is a beautiful place in a
+          world full of beautiful places, and Wellington is a great
+          city in a world that contains Copenhagen, Barcelona, Cape
+          Town, San Francisco, Boston, Chicago, New York, Shanghai,
+          London, and Tokyo. In an ideal world I'd get to experience
+          living in all of those places. And in a log cabin in the
+          mountains of Montana.</p>
 
-	  <p>My only point is that it's up to you to decide on your
-	  future. It's ok to want to leave, and it's ok to want to
-	  stay.</p>
+          <p>However, I'm willing to accept that I'm in the
+          minority. A good friend of mine just moved here because he
+          fell for Wellington during a visit. I work with some people
+          that moved back here from Hong Kong specifically because
+          they wanted to live in Wellington. There seem to be a lot of
+          emerging scientists that do want a future in New
+          Zealand.</p>
 
-	  <p>For those of you that want to stay, can you? If science
-	  is your priority then the answer is probably no. My
-	  postdoctoral work focused on soft x-ray
-	  spectroscopy. Basically, that means I shot x-rays at various
-	  materials and looked at what came out. To do that you need a
-	  synchrotron, which is basically a particle accelerator, and
-	  costs on the order of 100 million dollars to build. I could
-	  not have come back to New Zealand if I'd wanted to keep
-	  doing that.</p>
+          <p>My only point is that it's up to you to decide on your
+          future. It's ok to want to leave, and it's ok to want to
+          stay.</p>
 
-	  <p>There is no chance you'll ever be able to do that kind of
-	  science in New Zealand. Nor is it likely that we'll attract
-	  many superstars. If you want to be surrounded by the very
-	  best scientists and students then you need to be in Boston,
-	  or the Bay Area, or somewhere like that. I'm sure that
-	  there's been plenty of talk about virtual networks today,
-	  but you can't beat physical presence.</p>
+          <p>For those of you that want to stay, can you? If science
+          is your priority then the answer is probably no. My
+          postdoctoral work focused on soft x-ray
+          spectroscopy. Basically, that means I shot x-rays at various
+          materials and looked at what came out. To do that you need a
+          synchrotron, which is basically a particle accelerator, and
+          costs on the order of 100 million dollars to build. I could
+          not have come back to New Zealand if I'd wanted to keep
+          doing that.</p>
 
-	  <p>However, the answer is also yes. If staying in New
-	  Zealand is your priority then there are plenty of things you
-	  can do here. I'm not going to list them; I trying to make a
-	  more general point. If we want to claim that we are
-	  brilliant scientists, capable of pushing forward the
-	  boundaries of human knowledge, then surely we are also
-	  capable of finding a way to stay in New Zealand. There's
-	  been a lot of talk today about how we need help from
-	  businesses, universities, and government. If you really want
-	  to stay in New Zealand then perhaps you should ignore that
-	  and figure it out for yourself. You might not have the same
-	  choices of what to work on, but it's certainly possible.</p>
+          <p>There is no chance you'll ever be able to do that kind of
+          science in New Zealand. Nor is it likely that we'll attract
+          many superstars. If you want to be surrounded by the very
+          best scientists and students then you need to be in Boston,
+          or the Bay Area, or somewhere like that. I'm sure that
+          there's been plenty of talk about virtual networks today,
+          but you can't beat physical presence.</p>
 
-	  <p>Don't get me wrong, I'm not saying that's easy.</p>
+          <p>However, the answer is also yes. If staying in New
+          Zealand is your priority then there are plenty of things you
+          can do here. I'm not going to list them; I trying to make a
+          more general point. If we want to claim that we are
+          brilliant scientists, capable of pushing forward the
+          boundaries of human knowledge, then surely we are also
+          capable of finding a way to stay in New Zealand. There's
+          been a lot of talk today about how we need help from
+          businesses, universities, and government. If you really want
+          to stay in New Zealand then perhaps you should ignore that
+          and figure it out for yourself. You might not have the same
+          choices of what to work on, but it's certainly possible.</p>
 
-	  <p>I'll never forget what it was like to wake up in the days
-	  after quitting my postdoc. There is nothing you have to do;
-	  you're completely free to do whatever you want. No boss, no
-	  papers to write, no requirements. Sounds great, right? It's
-	  actually terrifying. What I've come to realize is that
-	  freedom is a scary thing. Having a job, a PhD to complete, a
-	  talk to present, these things give you validation.</p>
+          <p>Don't get me wrong, I'm not saying that's easy.</p>
 
-	  <p>A couple of years ago William Deresiewicz gave a talk to
-	  the plebe class at West Point. The title was "Solitude and
-	  Leadership" [<a href="#fn:3">3</a>]. The transcript is
-	  definitely worth reading; you'll find it in The American
-	  Scholar. In it he makes the case that leadership is not
-	  about being popular with people, but that leadership is
-	  about setting a course that is true to what you believe;
-	  it's about solitude.</p>
+          <p>I'll never forget what it was like to wake up in the days
+          after quitting my postdoc. There is nothing you have to do;
+          you're completely free to do whatever you want. No boss, no
+          papers to write, no requirements. Sounds great, right? It's
+          actually terrifying. What I've come to realize is that
+          freedom is a scary thing. Having a job, a PhD to complete, a
+          talk to present, these things give you validation.</p>
 
-	  <p>The thing is that as we've trained to become expert
-	  scientists we've also trained to become experts at meeting
-	  the requirements of a bureaucracy. We go to school and learn
-	  how to pass tests. We graduate and learn how to get papers
-	  accepted into journals. We start working and learn how to
-	  write funding proposals.</p>
+          <p>A couple of years ago William Deresiewicz gave a talk to
+          the plebe class at West Point. The title was "Solitude and
+          Leadership" [<a href="#fn:3">3</a>]. The transcript is
+          definitely worth reading; you'll find it in The American
+          Scholar. In it he makes the case that leadership is not
+          about being popular with people, but that leadership is
+          about setting a course that is true to what you believe;
+          it's about solitude.</p>
 
-	  <p>I wonder if we shouldn't also try to train leaders,
-	  people that can imagine something beyond the
-	  bureaucracy. Maybe that sort of creative thinking is what
-	  New Zealand needs most of all.</p>
+          <p>The thing is that as we've trained to become expert
+          scientists we've also trained to become experts at meeting
+          the requirements of a bureaucracy. We go to school and learn
+          how to pass tests. We graduate and learn how to get papers
+          accepted into journals. We start working and learn how to
+          write funding proposals.</p>
 
-	  <p>Thanks.</p>
-	</div>
+          <p>I wonder if we shouldn't also try to train leaders,
+          people that can imagine something beyond the
+          bureaucracy. Maybe that sort of creative thinking is what
+          New Zealand needs most of all.</p>
+
+          <p>Thanks.</p>
+        </div>
       </div>
 
     </section>
 
     <hr />
-    
+
     <section id="footnotes">
       <div class="row">
-	<div class="span5">
-	  <p><em>Thanks to Daniel Johnston for reading a draft of this
-	  talk.</em></p>
-	  <ol>
-	    <li id="fn:1">
-	      <p>Wool to Weta: Transforming New Zealand's Culture -
-	      Paul Callaghan; Auckland University Press 2009.</p>
-	    </li>
-	    <li id="fn:2">
-	      <p><a href="http://publons.com">publons.com</a></p>
-	    </li>
-	    <li id="fn:3">
-	      <p>
-		<a href="http://theamericanscholar.org/solitude-and-leadership/">Solitude
-		and Leadership</a> - William Deresiewicz; The American
-		Scholar 2010.</p>
-	    </li>
-	  </ol>
-	</div>
+        <div class="span5">
+          <p><em>Thanks to <a href="http://drjohnston.co.nz">Daniel
+          Johnston</a> for reading a draft of this talk.</em></p>
+          <ol>
+            <li id="fn:1">
+              <p>Wool to Weta: Transforming New Zealand's Culture -
+              Paul Callaghan; Auckland University Press 2009.</p>
+            </li>
+            <li id="fn:2">
+              <p><a href="http://publons.com">publons.com</a></p>
+            </li>
+            <li id="fn:3">
+              <p>
+                <a href="http://theamericanscholar.org/solitude-and-leadership/">Solitude
+                and Leadership</a> - William Deresiewicz; The American
+                Scholar 2010.</p>
+            </li>
+          </ol>
+        </div>
       </div>
     </section>
-    
+
     <hr />
-    
+
     <footer class="footer">
       <p class="pull-right"><em>by</em> Andrew Preston</p>
       <p class="pull-left">Built with
-	<a href="http://twitter.github.com/bootstrap/">bootstrap</a>
-	and <a href="http://jquery.com/">jQuery</a>.</p>
+        <a href="http://twitter.github.com/bootstrap/">bootstrap</a>
+        and <a href="http://jquery.com/">jQuery</a>.</p>
     </footer>
-    
+
   </div>
 
-  <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
   <script type="text/javascript" src="/static/bootstrap/js/bootstrap.js"></script>
-  <script type="text/javascript">
-
-$.fn.scrollFix = function() {
-    /*
-     * jQuery plugin to fix an element at the top of the page as the
-     * window scrolls past it. This borrows heavily from the bootstrap
-     * documentation page.
-     *
-     * Assumes the following html structure:
-     *   <div class="scroll-fix">
-     *     <div>
-     *       {content}
-     */
-    
-    var $scrollFix = this; // element to fix in place
-
-    // Ensure that ".scroll-fix" and ".scroll-fix div" are the same
-    // height. This stops the page from jumping around when we fix
-    // ".scroll-fix div" in place
-    $scrollFix.height( $scrollFix.children('div').height() );
-    
-    $(window).on('scroll', processScroll);
-    
-    function processScroll() {
-	var scrollTop = $(window).scrollTop(); // body position at top of window
-	var elemTop = $scrollFix.offset().top; // position of elem from top of body
-	var isFixed = $scrollFix.data('isFixed');
-
-	if (scrollTop >= elemTop && !isFixed) {
-            $scrollFix.data('isFixed', 1);
-            $scrollFix.addClass('scroll-fix-fixed');
-	} else if (scrollTop <= elemTop && isFixed) {
-            $scrollFix.data('isFixed', 0);
-            $scrollFix.removeClass('scroll-fix-fixed');
-	}
-    }
-
-    return this;
-}
-
-$( ".scroll-fix" ).scrollFix();
-				
-$( "a.expand" ).click( function(event) {
-    /*
-     * Expands a span contained within a link. Makes for a nice effect
-     * in what would otherwise be a ridiculously long paragraph.
-     */
-    event.preventDefault();
-
-    $(this)
-	.toggleClass( "active" )
-	.children( "span" ).toggle();
-});
-				
-  </script>
-  <script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-try {
-var pageTracker = _gat._getTracker("UA-11589692-2");
-pageTracker._trackPageview();
-} catch(err) {}
-  </script>
+  <script type="text/javascript" src="/static/main.js"></script>
 
 </body>
 

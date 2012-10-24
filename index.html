@@ -15,53 +15,8 @@
   <meta http-equiv="X-XRDS-Location" content="http://www.myopenid.com/xrds?username=Andrew.Preston.myopenid.com" />
 
   <link rel="shortcut icon" href="favicon.ico"/>
-  <link href="static/bootstrap/css/bootstrap.css" rel="stylesheet" />
-  <link href="static/bootstrap/css/bootstrap-responsive.css" rel="stylesheet" />
-  <style type="text/css">
-    
-    body { padding-top: 20px; padding-bottom: 40px; }
-
-    /* Basic layout for the overview section at the top of the page */
-    .hero-unit { padding:30px 60px 30px 60px; margin-bottom:0; } /* default = 60px
-
-    /* Used to fix navbar in place as we scoll */
-    .scroll-fix div ul {
-	padding-left:60px; background-color: whiteSmoke; z-index:100; }
-    .scroll-fix-fixed div { position:fixed; top:0; }
-
-    /* Effect to allow expansion of hidden sentences in text */
-    a.expand:hover { text-decoration:none; }
-    a.expand span { display:none; }
-    a.expand { color:#370; }
-    a.expand.active { background-color:#ddd; }
-    a.expand.active span { color:#005580; color:#E8BE34; color:#730;}
-
-    /* Need to make the following responsive
-     *   => .well { padding:19px; border: 1px solid; } (40 extra pixels)
-     *   => some table columns shouldn't wrap on larger displays, shouldn't show on smaller displays
-     *   => inline lists look horrible at small screen widths
-     */
-    @media (max-width: 480px) {}
-    @media (max-width: 768px) {
-	.hero-unit { padding:10px; }
-	.nowrap { display:none; }
-	.scroll-fix { display:none; }
-    	div[class~=well][class~=span4] { margin-bottom:20px; } /* was 228px */ }
-    @media (min-width: 768px) {
-	.nowrap { white-space:nowrap; }
-	ul.inline { display:inline; }
-	ul.inline li { display:inline; }
-	ul.inline li:after { content:" |"; }
-	ul.inline li:last-child:after { content:"."; }
-	ul.hero li span { display:inline-block; width:3em; } /* Align all sublists */ }
-    @media (min-width: 768px) and (max-width: 980px) {
-	div[class~=well][class~=span4] { width:188px; } /* was 228px */ }
-    @media (min-width: 980px) {
-    	div[class~=well][class~=span4] { width:260px; } /* was 300px */ }
-    @media (min-width: 1200px) {
-    	div[class~=well][class~=span4] { width:330px; } /* was 370px */ }
-
-  </style>
+  <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/css/bootstrap-combined.min.css" rel="stylesheet">
+  <link href="/static/main.css" rel="stylesheet" />
 </head>
 
 <body id="top" data-spy="scroll" data-target=".scroll-fix" data-offset="48"><!-- 48px because .page-header.height is 48px -->
@@ -70,547 +25,506 @@
 
     <div class="hero-unit">
       <div class="row head">
-    	<div class="span10">
-    	  <h1 id="me">Andrew Preston</h1>
-    	</div>
+        <div class="span10">
+          <h1 id="me">Andrew Preston</h1>
+        </div>
       </div>
 
       <div class="row">
-    	<div class="span7">
-    	  <p>Lives
-    	    <a href="#" class="expand">here<span>. As of February 2012 he can be found in Wellington, New Zealand</span></a>.
-    	    This particular Andrew holds a doctorate in <a href="#" class="expand"><span>condensed matter </span>physics</a>
-    	    and has three passports. He claims to be a fan of
-    	    <a href="#" class="expand">good food<span> and cooking with friends and family</span></a>,
-    	    <a href="#" class="expand">red wine<span>, a Central Otago pinot noir perhaps</span></a>,
-    	    <a href="#" class="expand">beautiful prose<span> as exemplified by <em>The Quiet Girl</em> by Peter Hoeg, <em>Tender is the Night</em> by F. Scott Fitzgerald, and <em>East of Eden</em> by John Steinbeck</span></a>,
-    	    <a href="#" class="expand">competitive sport<span> and dynasties like the <em>New England Patriots</em>, the <em>Detroit Red Wings</em>, and <em>Roger Federer</em></span></a>,
-    	    <a href="#" class="expand">new ideas<span> and thus everything <em>Robin Hanson</em> writes</span></a>,
-    	    <a href="#" class="expand">light planes<span> (about fifteen hours logged)</span></a>,
-    	    <a href="#" class="expand">and travel<span>. He intends to see the Northern Lights from a dog sled in Greenland, watch the moon rise from the top of Kilimanjaro, and laze on the French Riviera</span></a>.
-    	    What a clich&eacute;.
-    	  </p>
-    	</div>
+        <div class="span7">
+          <p>Lives
+            <a href="#" class="expand">here<span>. As of February 2012 he can be found in Wellington, New Zealand</span></a>.
+            This particular Andrew holds a doctorate in <a href="#" class="expand"><span>condensed matter </span>physics</a>
+            and has three passports. He claims to be a fan of
+            <a href="#" class="expand">good food<span> and cooking with friends and family</span></a>,
+            <a href="#" class="expand">red wine<span>, a Central Otago pinot noir perhaps</span></a>,
+            <a href="#" class="expand">beautiful prose<span> as exemplified by <em>The Quiet Girl</em> by Peter Hoeg, <em>Tender is the Night</em> by F. Scott Fitzgerald, and <em>East of Eden</em> by John Steinbeck</span></a>,
+            <a href="#" class="expand">competitive sport<span> and dynasties like the <em>New England Patriots</em>, the <em>Detroit Red Wings</em>, and <em>Roger Federer</em></span></a>,
+            <a href="#" class="expand">new ideas<span> and thus everything <em>Robin Hanson</em> writes</span></a>,
+            <a href="#" class="expand">light planes<span> (about fifteen hours logged)</span></a>,
+            <a href="#" class="expand">and travel<span>. He intends to see the Northern Lights from a dog sled in Greenland, watch the moon rise from the top of Kilimanjaro, and laze on the French Riviera</span></a>.
+            What a clich&eacute;.
+          </p>
+        </div>
       </div>
 
       <div class="row">
-    	<div class="span10">
-    	  <ul class="hero">
-    	    <li><span>Email:</span>
-    	      <ul class="inline">
-    		<li><a href="mailto:andrew@preston.co.nz">andrew@preston.co.nz</a></li>
-    		<li><a href="mailto:andrew.preston@gmail.com">andrew.preston@gmail.com</a></li>
-    		<li><a href="mailto:andrew@publons.com">andrew@publons.com</a></li>
-    	      </ul>
-    	    </li>
-    	    <li><span>R&eacute;sum&eacute;:</span>
-    	      <ul class="inline">
-    		<li><a href="pubs/Andrew Preston CV.pdf">February 2012</a></li>
-    	      </ul>
-    	    </li>
-    	    <li><span>Online:</span>
-    	      <ul class="inline">
-    		<li><a href="http://www.facebook.com/andrew.preston">Facebook</a></li>
-    		<li><a href="http://www.google.com/profiles/andrew.preston">Google</a></li>
-    		<li><a href="http://www.linkedin.com/pub/andrew-preston/29/8aa/2a7">LinkedIn</a></li>
-    		<li><a href="https://twitter.com/#!/arhpreston">Twitter</a></li>
-    		<li><a href="https://github.com/arhpreston">Github</a></li>
-    		<li><a href="http://www.flickr.com/photos/arhpreston/">Flickr</a></li>
-    		<li><a href="http://andrew.preston.myopenid.com/">OpenID</a></li>
-    	      </ul>
-    	    </li>
-    	  </ul>
-    	</div>
+        <div class="span10">
+          <ul class="hero">
+            <li><span>Email:</span>
+              <ul class="inline">
+                <li><a href="mailto:andrew@preston.co.nz">andrew@preston.co.nz</a></li>
+                <li><a href="mailto:andrew.preston@gmail.com">andrew.preston@gmail.com</a></li>
+                <li><a href="mailto:andrew@publons.com">andrew@publons.com</a></li>
+              </ul>
+            </li>
+            <li><span>R&eacute;sum&eacute;:</span>
+              <ul class="inline">
+                <li><a href="pubs/Andrew Preston CV.pdf">February 2012</a></li>
+              </ul>
+            </li>
+            <li><span>Online:</span>
+              <ul class="inline">
+                <li><a href="http://www.facebook.com/andrew.preston">Facebook</a></li>
+                <li><a href="http://www.google.com/profiles/andrew.preston">Google</a></li>
+                <li><a href="http://www.linkedin.com/pub/andrew-preston/29/8aa/2a7">LinkedIn</a></li>
+                <li><a href="https://twitter.com/#!/arhpreston">Twitter</a></li>
+                <li><a href="https://github.com/arhpreston">Github</a></li>
+                <li><a href="http://www.flickr.com/photos/arhpreston/">Flickr</a></li>
+                <li><a href="http://andrew.preston.myopenid.com/">OpenID</a></li>
+              </ul>
+            </li>
+            <li><span>Recently:</span>
+              <ul class="inline">
+                <li><a href="pubs/future.html">Do emerging scientists have a future in New Zealand?</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
       </div>
-      
+
     </div>
 
     <div class="row scroll-fix">
       <div class="span12">
-    	<ul class="nav nav-pills nav-collapse">
-	  <li><a href="#top"><i class="icon-home"></i></a></li>
-	  <li><a href="#my-projects">Projects</a></li>
-	  <li><a href="#my-publications">Publications</a></li>
-	  <li><a href="#my-presentations">Presentations</a></li>
-	</ul>
+        <ul class="nav nav-pills nav-collapse">
+          <li><a href="#top"><i class="icon-home"></i></a></li>
+          <li><a href="#my-projects">Projects</a></li>
+          <li><a href="#my-publications">Publications</a></li>
+          <li><a href="#my-presentations">Presentations</a></li>
+        </ul>
       </div>
     </div>
 
     <section id="my-projects">
       <div class="page-header">
-	<h1>Projects</h1>
+        <h1>Projects</h1>
       </div>
 
       <div class="row">
-	<div class="span4 well">
-	  <h2><a href="http://publons.com">Publons</a></h2>
-	  <h4>The Future of Academic Publishing</h4>
-	  <p>An attempt to decouple the peer-review system from
-	    journals by allowing academics to review, rate, and
-	    discuss <em>any</em> publication.</p>
-	  <dl>
-	    <dt>Built with</dt>
-	    <dd>Python/Django</dd>
-	    <dd>AWS</dd>
-	    <dd>Postgres</dd>
-	    <dd>Javascript/jQuery</dd>
-	  </dl>
-	</div>
-	<div class="span4 well">
-	  <h2><a href="http://physics.bu.edu/people/show/prestoa">Postdoc</a>&nbsp;<small>2009 - 2011</small></h2>
-	  <h4>Beamline scientist <small>at Boston University</small></h4>
-	  <dl>
-	    <dt>Spectroscopic techniques</dt>
-	    <dd>X-ray absorption</dd>
-	    <dd>Resonant x-ray emission</dd>
-	    <dd>Angle-resolved photoemission</dd>
-
-	    <dt>Beamline scientist</dt>
-	    <dd>Maintained beamline X1B at the National Synchrotron
-	    Light Source, Brookhaven National Lab</dd>
-	    <dd>Managed and trained a small team of PhD students and postdocs</dd>
-	  </dl>
-	</div>
-	<div class="span4 well">
-	  <h2><a href="http://geopicnic.com">GeoPicnic</a>&nbsp;<small>coming soon</small></h2>
-	  <h4>Gourmet geocaching</h4>
-	  <p>The airbnb of geocaching. A market for locals to sell
-	    "premium" geocache-based adventures to travellers.</p>
-	</div>
+        <div class="span4 well">
+          <h2><a href="/scrambler.html">Scrambler</a>&nbsp;<small>2012</small></h2>
+          <h4>Take that, Zynga</h4>
+          <p>Find all possible words in a given scramble game.</p>
+          <dl>
+            <dt>
+              <a href="https://github.com/arhpreston/scrambler">Available</a> in
+            </dt>
+            <dd>Python</dd>
+            <dd>Javascript (with <a href="/scrambler.html">d3 visualizations</a>)</dd>
+          </dl>
+        </div>
+        <div class="span4 well">
+          <h2><a href="http://publons.com">Publons</a>&nbsp;<small>2011 - </small></h2></h2>
+          <h4>The Future of Academic Publishing</h4>
+          <p>An attempt to decouple the peer-review system from
+            journals by allowing academics to review, rate, and
+            discuss <em>any</em> publication.</p>
+          <dl>
+            <dt>Built with</dt>
+            <dd>Python/Django</dd>
+            <dd>AWS</dd>
+            <dd>Postgres</dd>
+            <dd>Javascript/jQuery</dd>
+          </dl>
+        </div>
+        <div class="span4 well">
+          <h2><a href="http://preston.co.nz/lifescore/">Circa Diem</a>&nbsp;<small>About the Day</small></h2>
+          <h4>Android app</h4>
+          <p>A home screen widget that displays your age in days, and
+          suggests days of interest based on queries to my web
+          service.</p>
+          <dl>
+            <dt>Built with</dt>
+            <dd>Java/Android</dd>
+            <dd>Python/Django</dd>
+          </dl>
+        </div>
       </div>
-      
-      <div class="row">
-	<div class="span4 well">
-	  <h2><a href="http://preston.co.nz/lifescore/">Circa Diem</a>&nbsp;<small>About the Day</small></h2>
-	  <h4>Android app</h4>
-	  <p>A home screen widget that displays your age in days, and
-	  suggests days of interest based on queries to my web
-	  service.</p>
-	  <dl>
-	    <dt>Built with</dt>
-	    <dd>Java/Android</dd>
-	    <dd>Python/Django</dd>
-	  </dl>
-	</div>
-	<div class="span4 well">
-	  <h2><a href="http://iprofit.co.nz">iProfit</a></h2>
-	  <h4>Online algorithmic arbitrage system</h4>
-	  <p>Traded profitably on iPredict for some time</p>
-	  <dl>
-	    <dt>Built with</dt>
-	    <dd>Python</dd>
-	  </dl>
-	</div>
-	<div class="span4 well">
-	  <h2><a href="http://macdiarmid.ac.nz/research/theme-2-electronic-and-optical-materials/optoelectronic-properties-of-nanoscale-and-advance">PhD</a>&nbsp;<small>2006 - 2009</small></h2>
-	  <h4>The Electronic Structure of the Rare-Earth Nitrides <small>at Victoria University of Wellington</h4>
-	  <dl>
-	    <dt>Crystal growth</dt>
-	    <dd>Thermally evaporated epitaxy</dd>
-	    <dd>Pulsed laser deposition</dd>
 
-	    <dt>Electronic structure characterization</dt>
-	    <dd>Resistivity, x-ray diffraction</dd>
-	    <dd>Optical spectroscopy (Raman, elipsometry, FTIR, &amp;c.)</dd>
-	    <dd>Soft x-ray spectroscopy</dd>
-	  </dl>	      
-	</div>
+      <div class="row">
+        <div class="span4 well">
+          <h2><a href="http://physics.bu.edu/people/show/prestoa">Postdoc</a>&nbsp;<small>2009 - 2011</small></h2>
+          <h4>Beamline scientist <small>at Boston University</small></h4>
+          <dl>
+            <dt>Spectroscopic techniques</dt>
+            <dd>X-ray absorption</dd>
+            <dd>Resonant x-ray emission</dd>
+            <dd>Angle-resolved photoemission</dd>
+
+            <dt>Beamline scientist</dt>
+            <dd>Maintained beamline X1B at the National Synchrotron
+            Light Source, Brookhaven National Lab</dd>
+            <dd>Managed and trained a small team of PhD students and postdocs</dd>
+          </dl>
+        </div>
+        <div class="span4 well">
+          <h2><a href="http://iprofit.co.nz">iProfit</a>&nbsp;<small>2010</small></h2>
+          <h4>Online algorithmic arbitrage system</h4>
+          <p>Traded profitably
+          on <a href="http://ipredict.co.nz">iPredict</a> for some
+          time</p>
+          <dl>
+            <dt>Built with</dt>
+            <dd>Python</dd>
+          </dl>
+        </div>
+        <div class="span4 well">
+          <h2><a href="http://macdiarmid.ac.nz/research/theme-2-electronic-and-optical-materials/optoelectronic-properties-of-nanoscale-and-advance">PhD</a>&nbsp;<small>2006 - 2009</small></h2>
+          <h4>The Electronic Structure of the Rare-Earth Nitrides <small>at Victoria University of Wellington</small></h4>
+          <dl>
+            <dt>Crystal growth</dt>
+            <dd>Thermally evaporated epitaxy</dd>
+            <dd>Pulsed laser deposition</dd>
+
+            <dt>Electronic structure characterization</dt>
+            <dd>Resistivity, x-ray diffraction</dd>
+            <dd>Optical spectroscopy (Raman, elipsometry, FTIR, &amp;c.)</dd>
+            <dd>Soft x-ray spectroscopy</dd>
+          </dl>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="span4 well">
+          <h2><a href="http://geopicnic.com">GeoPicnic</a>&nbsp;<small>coming soon</small></h2>
+          <h4>Gourmet geocaching</h4>
+          <p>The airbnb of geocaching. A market for locals to sell
+            "premium" geocache-based adventures to travellers.</p>
+        </div>
       </div>
 
     </section>
 
     <section id="my-publications">
       <div class="page-header">
-	<h1>Publications</h1>
+        <h1>Publications</h1>
       </div>
 
       <p>
-	Download the <a href="pubs/Andrew Preston publications.zip">zip</a>,
-	or get the <a href="pubs/Andrew Preston bibtex.bib">BibTeX</a>
+        Download the <a href="pubs/Andrew Preston publications.zip">zip</a>,
+        or get the <a href="pubs/Andrew Preston bibtex.bib">BibTeX</a>
       </p>
-	
+
       <table class="table table-condensed table-striped">
-	<thead>
-	  <tr>
-	    <th>#</th>
-	    <th>Title</th>
-	    <th class="nowrap">Date</th>
-	    <th class="nowrap">Citation</th>
-	    <th>pdf</th>
-	  </tr>
-	</thead>
-	<tbody>
-	  <tr>
-	    <td>22</td>
-	    <td>Electronic structure of EuN: Growth, spectroscopy, and theory</td>
-	    <td class="nowrap">Dec 2011</td>
-	    <td class="nowrap"><a href="http://link.aps.org/doi/10.1103/PhysRevB.84.235120">Phys. Rev. B 84, 235120 (2011)</a></td>
-	    <td></td>
-	  </tr>
-	  <tr>
-	    <td>21</td>
-	    <td>Maximum entropy deconvolution of resonant inelastic x-ray scattering spectra</td>
-	    <td class="nowrap">Dec 2011</td>
-	    <td class="nowrap"><a href="http://link.aps.org/doi/10.1103/PhysRevB.84.235111">Phys. Rev. B 84, 235111 (2011)</a></td>
-	    <td></td>
-	  </tr>
-	  <tr>
-	    <td>20</td>
-	    <td>Orbital anisotropy and low-energy excitations of the quasi-one-dimensional conductor &beta;-Sr<sub>0.17</sub>V<sub>2</sub>O<sub>5</sub></td>
-	    <td class="nowrap">May 2011</td>
-	    <td class="nowrap"><a href="http://link.aps.org/doi/10.1103/PhysRevB.84.155103">Phys. Rev. B 84, 155103 (2011)</a></td>
-	    <td></td>
-	  </tr>
-	  <tr>
-	    <td>19</td>
-	    <td>First-principles calculation of resonant x-ray emission spectra applied to ZnO</td>
-	    <td class="nowrap">May 2011</td>
-	    <td class="nowrap"><a href="http://link.aps.org/doi/10.1103/PhysRevB.83.205106">Phys. Rev. B 83, 205106 (2011)</a></td>
-	    <td><a href="pubs/20110516 - Phys. Rev. B 83, 205106 (2011) - Preston - RXES of ZnO.pdf"><i class="icon-download"></i></a></td>
-	  </tr>
-	  <tr>
-	    <td>18</td>
-	    <td>Soft x-ray spectroscopic study of the ferromagnetic insulator V<sub>0.82</sub>Cr<sub>0.18</sub>O<sub>2</sub></td>
-	    <td class="nowrap">Dec 2010</td>
-	    <td class="nowrap"><a href="http://link.aps.org/doi/10.1103/PhysRevB.82.235103">Phys. Rev. B 82, 235103 (2010)</a></td>
-	    <td><a href="pubs/20101201 - Phys. Rev. B 82, 235103 (2010) - Piper, Preston - XXS of (VCr)O2.pdf"><i class="icon-download"></i></a></td>
-	  </tr>
-	  <tr>
-	    <td>17</td>
-	    <td>Direct evidence of metallicity at ZnO (000<span style="text-decoration: overline;">1</span>)-(1x1) surfaces from angle-resolved photoemission spectroscopy</td>
-	    <td class="nowrap">June 2010</td>
-	    <td class="nowrap"><a href="http://link.aps.org/doi/10.1103/PhysRevB.81.233305">Phys. Rev. B. 81, 233305 (2010)</a></td>
-	    <td><a href="pubs/20100622 - Phys. Rev. B. 81, 233305 (2010) - Piper, Preston - ZnO ARPES.pdf"><i class="icon-download"></i></a></td>
-	  </tr>
-	  <tr>
-	    <td>16</td>
-	    <td>Tunable electrical and optical properties of hafnium nitride thin films</td>
-	    <td class="nowrap">Feb 2010</td>
-	    <td class="nowrap"><a href="http://link.aip.org/link/?APPLAB/96/071914/1">Appl. Phys. Lett. 96, 071914 (2010)</a></td>
-	    <td><a href="pubs/20100219 - Appl. Phys. Lett. 96, 071914 (2010) - Tunable electrical and optical properties of hafnium nitride thin films.pdf"><i class="icon-download"></i></a></td>
-	  </tr>
-	  <tr>
-	    <td>15</td>
-	    <td>Electronic structure of Cu-TFAC from XXS and DFT</td>
-	    <td class="nowrap">Feb 2010</td>
-	    <td class="nowrap"><a href="http://dx.doi.org/10.1039/b926277f">Phys. Chem. Chem. Phys. 12, 3171</a></td>
-	    <td><a href="pubs/20100210 - Phys. Chem. Chem. Phys. 12, 3171 (2010) - DeMasi, Preston - Electronic structure of Cu-TFAC from XXS and DFT.pdf"><i class="icon-download"></i></a></td>
-	  </tr>
-	  <tr>
-	    <td>14</td>
-	    <td><strong>Electronic structure of the rare-earth nitrides (PhD thesis)</strong></td>
-	    <td class="nowrap">Jan 2010</td>
-	    <td class="nowrap"><a href="http://hdl.handle.net/10063/1180">Victoria University of Wellington</a></td>
-	    <td><a href="pubs/20100223 - Thesis (PhD, 2010) - Andrew Preston.v2.pdf"><i class="icon-download"></i></a></td>
-	  </tr>
-	  <tr>
-	    <td>13</td>
-	    <td>Electronic band structure information of GdN extracted from x-ray absorption and emission spectroscopy</td>
-	    <td class="nowrap">Jan 2010</td>
-	    <td class="nowrap"><a href="http://link.aip.org/link/?APPLAB/96/032101/1">Appl. Phys. Lett. 96, 032101 (2010)</a></td>
-	    <td><a href="pubs/20100119 - Appl. Phys. Lett. 96, 032101 (2010) - Preston - Electronic structure of GdN from x-ray spectroscopy.pdf"><i class="icon-download"></i></a></td>
-	  </tr>
-	  <tr>
-	    <td>12</td>
-	    <td>Magnetic properties of ErN films</td>
-	    <td class="nowrap">Jan 2010</td>
-	    <td class="nowrap"><a href="http://dx.doi.org/10.1016/j.jmmm.2010.01.016">J. Magn. Magn. Mater. 322, 1973</a></td>
-	    <td><a href="pubs/20100118 - J. Mag. Mag. Mater. 322, 1973 (2010) - Meyer - Magnetic properties of ErN films.pdf"><i class="icon-download"></i></a></td>
-	  </tr>
-	  <tr>
-	    <td>11</td>
-	    <td>Electronic structure of C<sub>60</sub>/Phthalocyanine/ITO interfaces studied using soft x-ray spectroscopies</td>
-	    <td class="nowrap">Jan 2010</td>
-	    <td class="nowrap"><a href="http://dx.doi.org/10.1021/jp910504a">J. Phys. Chem. C 114, 1928 (2010)</a></td>
-	    <td><a href="pubs/20100111 - J. Phys. Chem. C 114, 1928 (2010) - C60-Pc-ITO.pdf"><i class="icon-download"></i></a></td>
-	  </tr>
-	  <tr>
-	    <td>10</td>
-	    <td>Growth and properties of epitaxial GdN</td>
-	    <td class="nowrap">Sep 2009</td>
-	    <td class="nowrap"><a href="http://link.aip.org/link/?JAPIAU/106/063910/1">J. Appl. Phys. 106, 063910 (2009)</a></td>
-	    <td><a href="pubs/20090923 - J. Appl. Phys. 106, 063910 (2009) - Ludbrook, Preston - Growth and properties of epitaxial GdN.pdf"><i class="icon-download"></i></a></td>
-	  </tr>
-	  <tr>
-	    <td>9</td>
-	    <td>Vibrational properties of rare-earth nitrides: Raman spectra and theory</td>
-	    <td class="nowrap">Feb 2009</td>
-	    <td class="nowrap"><a href="http://link.aps.org/doi/10.1103/PhysRevB.79.054301">Phys. Rev. B 79, 054301 (2009)</a></td>
-	    <td><a href="pubs/20090212 - Phys. Rev. B 79, 054301 (2009) - Lambrecht, Preston - Vibrational properties of ReNs, raman spectra and theory.pdf"><i class="icon-download"></i></a></td>
-	  </tr>
-	  <tr>
-	    <td>8</td>
-	    <td>Electronic properties of GaMnN thin films with high Mn content</td>
-	    <td class="nowrap">Nov 2008</td>
-	    <td class="nowrap"><a href="http://link.aip.org/link/?JAPIAU/104/103710/1">J. Appl. Phys. 104, 103710 (2008)</a></td>
-	    <td><a href="pubs/20081119 - J. Appl. Phys. 104, 103710 (2008) - Granville, Preston - Electronic properties of GaMnN thin films with high Mn content.pdf"><i class="icon-download"></i></a></td>
-	  </tr>
-	  <tr>
-	    <td>7</td>
-	    <td>Near-zero moment ferromagnetism in the semiconductor SmN</td>
-	    <td class="nowrap">Nov 2008</td>
-	    <td class="nowrap"><a href="http://link.aps.org/doi/10.1103/PhysRevB.78.174406">Phys. Rev. B 78, 174406 (2008)</a></td>
-	    <!-- <td><a href="http://arxiv.org/abs/0804.1595">0804.1595</a></td> -->
-	    <td><a href="pubs/20081107 - Phys. Rev. B 78, 174406 (2008) - Meyer, Preston - Near-zero-moment ferromagnetism in the semiconductor SmN.pdf"><i class="icon-download"></i></a></td>
-	  </tr>
-	  <tr>
-	    <td>6</td>
-	    <td>Band structure of ZnO from resonant x-ray emission spectroscopy</td>
-	    <td class="nowrap">Oct 2008</td>
-	    <td class="nowrap"><a href="http://link.aps.org/doi/10.1103/PhysRevB.78.155114">Phys. Rev. B 78, 155114 (2008)</a></td>
-	    <!-- <td><a href="http://arxiv.org/abs/0805.4641">0805.4641</a></td> -->
-	    <td><a href="pubs/20081015 - Phys. Rev. B 78, 155114 (2008) - Preston - Band structure of ZnO from RXES.pdf"><i class="icon-download"></i></a></td>
-	  </tr>
-	  <tr>
-	    <td>5</td>
-	    <td>Comparison between experiment and calculated band structures for DyN and SmN</td>
-	    <td class="nowrap">Dev 2007</td>
-	    <td class="nowrap"><a href="http://link.aps.org/doi/10.1103/PhysRevB.76.245120">Phys. Rev. B 76, 245120 (2007)</a></td>
-	    <!-- <td><a href="http://arxiv.org/abs/cond-mat/0703740">0703740</a></td> -->
-	    <td><a href="pubs/20071220 - Phys. Rev. B 76, 245120 (2007) - Preston - Comparison between experiment and calculated band structures for DyN and SmN.pdf"><i class="icon-download"></i></a></td>
-	  </tr>
-	  <tr>
-	    <td>4</td>
-	    <td>Ferromagnetic redshift of the optical gap in GdN</td>
-	    <td class="nowrap">Aug 2007</td>
-	    <td class="nowrap"><a href="http://link.aps.org/doi/10.1103/PhysRevB.76.085211">Phys. Rev. B 76, 085211 (2007)</a></td>
-	    <!-- <td><a href="http://arxiv.org/abs/0705.2912">0705.2912</a></td> -->
-	    <td><a href="pubs/20070829 - Phys. Rev. B 76, 085211 (2007) - Trodahl, Preston - Ferromagnetic redshift of the optical gap in GdN.pdf"><i class="icon-download"></i></a></td>
-	  </tr>
-	  <tr>
-	    <td>3</td>
-	    <td>Photocurrent diffusion length in disordered GaN</td>
-	    <td class="nowrap">Mar 2007</td>
-	    <td class="nowrap">J. Mater. Sci. 18, 107 (2007)</td>
-	    <td><a href="pubs/20070324 - J. Mater. Sci. - Mater. Electron. 18, 107 (2007) - Koo, Preston - Photocurrent diffusion length in disordered GaN.pdf"><i class="icon-download"></i></a></td>
-	  </tr>
-	  <tr>
-	    <td>2</td>
-	    <td>Semiconducting ground state of GdN thin films</td>
-	    <td class="nowrap">Jun 2006</td>
-	    <td class="nowrap"><a href="http://link.aps.org/doi/10.1103/PhysRevB.73.235335">Phys. Rev. B 73, 235335 (2006)</a></td>
-	    <td><a href="pubs/20060620 - Phys. Rev. B 73, 235335 (2006) - Granville, Preston - Semiconducting ground state of GdN thin films.pdf"><i class="icon-download"></i></a></td>
-	  </tr>
-	  <tr>
-	    <td>1</td>
-	    <td>Photoconductivity in nanocrystalline GaN and amorhpous GaON</td>
-	    <td class="nowrap">Feb 2006</td>
-	    <td class="nowrap"><a href="http://link.aip.org/link/?JAPIAU/99/034312/1">J. Appl. Phys. 99, 034312 (2006)</a></td>
-	    <td><a href="pubs/20060213 - J. Appl. Phys. 99, 034312 (2006) - Koo, Preston - Photoconductivity in nanocrystalline GaN and amorhpous GaON.pdf"><i class="icon-download"></i></a></td>
-	  </tr>
-	</tbody>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Title</th>
+            <th class="nowrap">Date</th>
+            <th class="nowrap">Citation</th>
+            <th>pdf</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>22</td>
+            <td>Electronic structure of EuN: Growth, spectroscopy, and theory</td>
+            <td class="nowrap">Dec 2011</td>
+            <td class="nowrap"><a href="http://link.aps.org/doi/10.1103/PhysRevB.84.235120">Phys. Rev. B 84, 235120 (2011)</a></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>21</td>
+            <td>Maximum entropy deconvolution of resonant inelastic x-ray scattering spectra</td>
+            <td class="nowrap">Dec 2011</td>
+            <td class="nowrap"><a href="http://link.aps.org/doi/10.1103/PhysRevB.84.235111">Phys. Rev. B 84, 235111 (2011)</a></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>20</td>
+            <td>Orbital anisotropy and low-energy excitations of the quasi-one-dimensional conductor &beta;-Sr<sub>0.17</sub>V<sub>2</sub>O<sub>5</sub></td>
+            <td class="nowrap">May 2011</td>
+            <td class="nowrap"><a href="http://link.aps.org/doi/10.1103/PhysRevB.84.155103">Phys. Rev. B 84, 155103 (2011)</a></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>19</td>
+            <td>First-principles calculation of resonant x-ray emission spectra applied to ZnO</td>
+            <td class="nowrap">May 2011</td>
+            <td class="nowrap"><a href="http://link.aps.org/doi/10.1103/PhysRevB.83.205106">Phys. Rev. B 83, 205106 (2011)</a></td>
+            <td><a href="pubs/20110516 - Phys. Rev. B 83, 205106 (2011) - Preston - RXES of ZnO.pdf"><i class="icon-download"></i></a></td>
+          </tr>
+          <tr>
+            <td>18</td>
+            <td>Soft x-ray spectroscopic study of the ferromagnetic insulator V<sub>0.82</sub>Cr<sub>0.18</sub>O<sub>2</sub></td>
+            <td class="nowrap">Dec 2010</td>
+            <td class="nowrap"><a href="http://link.aps.org/doi/10.1103/PhysRevB.82.235103">Phys. Rev. B 82, 235103 (2010)</a></td>
+            <td><a href="pubs/20101201 - Phys. Rev. B 82, 235103 (2010) - Piper, Preston - XXS of (VCr)O2.pdf"><i class="icon-download"></i></a></td>
+          </tr>
+          <tr>
+            <td>17</td>
+            <td>Direct evidence of metallicity at ZnO (000<span style="text-decoration: overline;">1</span>)-(1x1) surfaces from angle-resolved photoemission spectroscopy</td>
+            <td class="nowrap">June 2010</td>
+            <td class="nowrap"><a href="http://link.aps.org/doi/10.1103/PhysRevB.81.233305">Phys. Rev. B. 81, 233305 (2010)</a></td>
+            <td><a href="pubs/20100622 - Phys. Rev. B. 81, 233305 (2010) - Piper, Preston - ZnO ARPES.pdf"><i class="icon-download"></i></a></td>
+          </tr>
+          <tr>
+            <td>16</td>
+            <td>Tunable electrical and optical properties of hafnium nitride thin films</td>
+            <td class="nowrap">Feb 2010</td>
+            <td class="nowrap"><a href="http://link.aip.org/link/?APPLAB/96/071914/1">Appl. Phys. Lett. 96, 071914 (2010)</a></td>
+            <td><a href="pubs/20100219 - Appl. Phys. Lett. 96, 071914 (2010) - Tunable electrical and optical properties of hafnium nitride thin films.pdf"><i class="icon-download"></i></a></td>
+          </tr>
+          <tr>
+            <td>15</td>
+            <td>Electronic structure of Cu-TFAC from XXS and DFT</td>
+            <td class="nowrap">Feb 2010</td>
+            <td class="nowrap"><a href="http://dx.doi.org/10.1039/b926277f">Phys. Chem. Chem. Phys. 12, 3171</a></td>
+            <td><a href="pubs/20100210 - Phys. Chem. Chem. Phys. 12, 3171 (2010) - DeMasi, Preston - Electronic structure of Cu-TFAC from XXS and DFT.pdf"><i class="icon-download"></i></a></td>
+          </tr>
+          <tr>
+            <td>14</td>
+            <td><strong>Electronic structure of the rare-earth nitrides (PhD thesis)</strong></td>
+            <td class="nowrap">Jan 2010</td>
+            <td class="nowrap"><a href="http://hdl.handle.net/10063/1180">Victoria University of Wellington</a></td>
+            <td><a href="pubs/20100223 - Thesis (PhD, 2010) - Andrew Preston.v2.pdf"><i class="icon-download"></i></a></td>
+          </tr>
+          <tr>
+            <td>13</td>
+            <td>Electronic band structure information of GdN extracted from x-ray absorption and emission spectroscopy</td>
+            <td class="nowrap">Jan 2010</td>
+            <td class="nowrap"><a href="http://link.aip.org/link/?APPLAB/96/032101/1">Appl. Phys. Lett. 96, 032101 (2010)</a></td>
+            <td><a href="pubs/20100119 - Appl. Phys. Lett. 96, 032101 (2010) - Preston - Electronic structure of GdN from x-ray spectroscopy.pdf"><i class="icon-download"></i></a></td>
+          </tr>
+          <tr>
+            <td>12</td>
+            <td>Magnetic properties of ErN films</td>
+            <td class="nowrap">Jan 2010</td>
+            <td class="nowrap"><a href="http://dx.doi.org/10.1016/j.jmmm.2010.01.016">J. Magn. Magn. Mater. 322, 1973</a></td>
+            <td><a href="pubs/20100118 - J. Mag. Mag. Mater. 322, 1973 (2010) - Meyer - Magnetic properties of ErN films.pdf"><i class="icon-download"></i></a></td>
+          </tr>
+          <tr>
+            <td>11</td>
+            <td>Electronic structure of C<sub>60</sub>/Phthalocyanine/ITO interfaces studied using soft x-ray spectroscopies</td>
+            <td class="nowrap">Jan 2010</td>
+            <td class="nowrap"><a href="http://dx.doi.org/10.1021/jp910504a">J. Phys. Chem. C 114, 1928 (2010)</a></td>
+            <td><a href="pubs/20100111 - J. Phys. Chem. C 114, 1928 (2010) - C60-Pc-ITO.pdf"><i class="icon-download"></i></a></td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td>Growth and properties of epitaxial GdN</td>
+            <td class="nowrap">Sep 2009</td>
+            <td class="nowrap"><a href="http://link.aip.org/link/?JAPIAU/106/063910/1">J. Appl. Phys. 106, 063910 (2009)</a></td>
+            <td><a href="pubs/20090923 - J. Appl. Phys. 106, 063910 (2009) - Ludbrook, Preston - Growth and properties of epitaxial GdN.pdf"><i class="icon-download"></i></a></td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>Vibrational properties of rare-earth nitrides: Raman spectra and theory</td>
+            <td class="nowrap">Feb 2009</td>
+            <td class="nowrap"><a href="http://link.aps.org/doi/10.1103/PhysRevB.79.054301">Phys. Rev. B 79, 054301 (2009)</a></td>
+            <td><a href="pubs/20090212 - Phys. Rev. B 79, 054301 (2009) - Lambrecht, Preston - Vibrational properties of ReNs, raman spectra and theory.pdf"><i class="icon-download"></i></a></td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>Electronic properties of GaMnN thin films with high Mn content</td>
+            <td class="nowrap">Nov 2008</td>
+            <td class="nowrap"><a href="http://link.aip.org/link/?JAPIAU/104/103710/1">J. Appl. Phys. 104, 103710 (2008)</a></td>
+            <td><a href="pubs/20081119 - J. Appl. Phys. 104, 103710 (2008) - Granville, Preston - Electronic properties of GaMnN thin films with high Mn content.pdf"><i class="icon-download"></i></a></td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>Near-zero moment ferromagnetism in the semiconductor SmN</td>
+            <td class="nowrap">Nov 2008</td>
+            <td class="nowrap"><a href="http://link.aps.org/doi/10.1103/PhysRevB.78.174406">Phys. Rev. B 78, 174406 (2008)</a></td>
+            <!-- <td><a href="http://arxiv.org/abs/0804.1595">0804.1595</a></td> -->
+            <td><a href="pubs/20081107 - Phys. Rev. B 78, 174406 (2008) - Meyer, Preston - Near-zero-moment ferromagnetism in the semiconductor SmN.pdf"><i class="icon-download"></i></a></td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>Band structure of ZnO from resonant x-ray emission spectroscopy</td>
+            <td class="nowrap">Oct 2008</td>
+            <td class="nowrap"><a href="http://link.aps.org/doi/10.1103/PhysRevB.78.155114">Phys. Rev. B 78, 155114 (2008)</a></td>
+            <!-- <td><a href="http://arxiv.org/abs/0805.4641">0805.4641</a></td> -->
+            <td><a href="pubs/20081015 - Phys. Rev. B 78, 155114 (2008) - Preston - Band structure of ZnO from RXES.pdf"><i class="icon-download"></i></a></td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Comparison between experiment and calculated band structures for DyN and SmN</td>
+            <td class="nowrap">Dev 2007</td>
+            <td class="nowrap"><a href="http://link.aps.org/doi/10.1103/PhysRevB.76.245120">Phys. Rev. B 76, 245120 (2007)</a></td>
+            <!-- <td><a href="http://arxiv.org/abs/cond-mat/0703740">0703740</a></td> -->
+            <td><a href="pubs/20071220 - Phys. Rev. B 76, 245120 (2007) - Preston - Comparison between experiment and calculated band structures for DyN and SmN.pdf"><i class="icon-download"></i></a></td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Ferromagnetic redshift of the optical gap in GdN</td>
+            <td class="nowrap">Aug 2007</td>
+            <td class="nowrap"><a href="http://link.aps.org/doi/10.1103/PhysRevB.76.085211">Phys. Rev. B 76, 085211 (2007)</a></td>
+            <!-- <td><a href="http://arxiv.org/abs/0705.2912">0705.2912</a></td> -->
+            <td><a href="pubs/20070829 - Phys. Rev. B 76, 085211 (2007) - Trodahl, Preston - Ferromagnetic redshift of the optical gap in GdN.pdf"><i class="icon-download"></i></a></td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Photocurrent diffusion length in disordered GaN</td>
+            <td class="nowrap">Mar 2007</td>
+            <td class="nowrap">J. Mater. Sci. 18, 107 (2007)</td>
+            <td><a href="pubs/20070324 - J. Mater. Sci. - Mater. Electron. 18, 107 (2007) - Koo, Preston - Photocurrent diffusion length in disordered GaN.pdf"><i class="icon-download"></i></a></td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Semiconducting ground state of GdN thin films</td>
+            <td class="nowrap">Jun 2006</td>
+            <td class="nowrap"><a href="http://link.aps.org/doi/10.1103/PhysRevB.73.235335">Phys. Rev. B 73, 235335 (2006)</a></td>
+            <td><a href="pubs/20060620 - Phys. Rev. B 73, 235335 (2006) - Granville, Preston - Semiconducting ground state of GdN thin films.pdf"><i class="icon-download"></i></a></td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>Photoconductivity in nanocrystalline GaN and amorhpous GaON</td>
+            <td class="nowrap">Feb 2006</td>
+            <td class="nowrap"><a href="http://link.aip.org/link/?JAPIAU/99/034312/1">J. Appl. Phys. 99, 034312 (2006)</a></td>
+            <td><a href="pubs/20060213 - J. Appl. Phys. 99, 034312 (2006) - Koo, Preston - Photoconductivity in nanocrystalline GaN and amorhpous GaON.pdf"><i class="icon-download"></i></a></td>
+          </tr>
+        </tbody>
       </table>
-      
+
     </section>
 
     <section id="my-presentations">
       <div class="page-header">
-	<h1>Presentations</h1>
+        <h1>Presentations</h1>
       </div>
 
       <table class="table table-condensed table-striped">
-	<thead>
-	  <tr>
-	    <th>#</th>
-	    <th>Title</th>
-	    <th class="nowrap">Date</th>
-	    <th class="nowrap">Event</th>
-	    <th>ppt</th>
-	    <th>pdf</th>
-	  </tr>
-	</thead>
-	<tbody>
-	  <tr>
-	    <td>13</td>
-	    <td><a href="pubs/future.html">Do emerging scientists have a future in New Zealand?</a></td>
-	    <td class="nowrap">Apr 2012</td>
-	    <td class="nowrap">NZAS 2012</td>
-	    <td></td>
-	    <td><a href="pubs/future.pdf"><i class="icon-download"></i></a></td>
-	  </tr>
-	  <tr>
-	    <td>12</td>
-	    <td>Three things Joe taught me</td>
-	    <td class="nowrap">Dec 2011</td>
-	    <td class="nowrap">Joe Trodahl birthday symposium</td>
-	    <td></td>
-	    <td></td>
-	  </tr>
-	  <tr>
-	    <td>11</td>
-	    <td>My career so far (pecha kucha)</td>
-	    <td class="nowrap">Nov 2011</td>
-	    <td class="nowrap">MacDiarmid student symposium</td>
-	    <td><a href="pubs/20111117 - MacDiarmid student and postdoc pecha kucha - Preston.pptx"><i class="icon-download"></i></a></td>
-	    <td></td>
-	  </tr>
-	  <tr>
-	    <td>10</td>
-	    <td>Electronic band structure of CrN and GdN from x-ray spectroscopy</td>
-	    <td class="nowrap">Nov 2010</td>
-	    <td class="nowrap">MRS, Fall meeting</td>
-	    <td><a href="pubs/20101129 - CrN (Preston).pptx"><i class="icon-download"></i></a></td>
-	    <td></td>
-	  </tr>
-	  <tr>
-	    <td>9</td>
-	    <td>The electronic structure of GdN from x-ray spectroscopy</td>
-	    <td class="nowrap">Nov 2009</td>
-	    <td class="nowrap">MRS, Fall meeting</td>
-	    <td><a href="pubs/20091101 - The electronic structure of GdN from x-ray spectroscopy (Preston).ppt"><i class="icon-download"></i></a></td>
-	    <td><a href="pubs/20091101 - The electronic structure of GdN from x-ray spectroscopy (Preston).pdf"><i class="icon-download"></i></a></td>
-	  </tr>
-	  <tr>
-	    <td>8</td>
-	    <td>Band structure information from soft x-ray spectroscopy (invited talk)</td>
-	    <td class="nowrap">Sep 2009</td>
-	    <td class="nowrap">Case Western Reserve University</td>
-	    <td><a href="pubs/20090928 - Andrew Preston - Band structure information from soft x-ray spectroscopy.pptx"><i class="icon-download"></i></a></td>
-	    <td><a href="pubs/20090928 - Andrew Preston - Band structure information from soft x-ray spectroscopy.pdf"><i class="icon-download"></i></a></td>
-	  </tr>
-	  <tr>
-	    <td>7</td>
-	    <td>Electronic structure of ZnO from x-ray spectroscopy</td>
-	    <td class="nowrap">Feb 2009</td>
-	    <td class="nowrap">AMN4</td>
-	    <td><a href="pubs/20090211 - Andrew Preston - Electronic structure of ZnO (AMN4).ppt"><i class="icon-download"></i></a></td>
-	    <td></td>
-	  </tr>
-	  <tr>
-	    <td>6</td>
-	    <td>X-ray spectroscopy (best talk, 3rd place)</td>
-	    <td class="nowrap">Nov 2008</td>
-	    <td class="nowrap">MacDiarmid student symposium</td>
-	    <td><a href="pubs/20081109 - X-ray spectroscopy - Andrew Preston (student symposium talk).ppt"><i class="icon-download"></i></a></td>
-	    <td></td>
-	  </tr>
-	  <tr>
-	    <td>5</td>
-	    <td>The electronic structure of ZnO from resonant x-ray emission spectroscopy (invited talk)</td>
-	    <td class="nowrap">Nov 2008</td>
-	    <td class="nowrap">MacDiarmid Seminar</td>
-	    <td><a href="pubs/20080904 - Electronic structure of ZnO - Andrew Preston (MacDiarmid talk).ppt"><i class="icon-download"></i></a></td>
-	    <td></td>
-	  </tr>
-	  <tr>
-	    <td>4</td>
-	    <td>High dynamic range photography</td>
-	    <td class="nowrap">Jun 2008</td>
-	    <td class="nowrap">PhD off-topic talk</td>
-	    <td><a href="pubs/20080610 - HDR photography - Andrew Preston (off-topic talk).ppt"><i class="icon-download"></i></a></td>
-	    <td></td>
-	  </tr>
-	  <tr>
-	    <td>3</td>
-	    <td>Growth and texturing of rare earth nitride thin films</td>
-	    <td class="nowrap">Nov 2008</td>
-	    <td class="nowrap">MRS, Fall meeting
-	    <td><a href="pubs/20071126 - MRS - Growth and texturing of rare earth nitride thin films.ppt"><i class="icon-download"></i></a></td>
-	    <td><a href="pubs/20071126 - MRS - Growth and texturing of rare earth nitride thin films.pdf"><i class="icon-download"></i></a></td>
-	  </tr>
-	  <tr>
-	    <td>2</td>
-	    <td>Electronic structure of SmN, GdN, and DyN</td>
-	    <td class="nowrap">Mar 2007</td>
-	    <td class="nowrap">APS, March meeting</td>
-	    <td><a href="pubs/20070306 - Electronic structure of SmN, GdN, and DyN.ppt"><i class="icon-download"></i></a></td>
-	    <td></td>
-	  </tr>
-	  <tr>
-	    <td>1</td>
-	    <td>Rare earth nitride thin films; growth and transport measurements</td>
-	    <td class="nowrap">Mar 2007</td>
-	    <td class="nowrap">APS, March meeting</td>
-	    <td><a href="pubs/20070306 - Rare earth nitride films - growth and transport measurements.ppt"><i class="icon-download"></i></a></td>
-	    <td></td>
-	  </tr>
-	</tbody>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Title</th>
+            <th class="nowrap">Date</th>
+            <th class="nowrap">Event</th>
+            <th>ppt</th>
+            <th>pdf</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>13</td>
+            <td><a href="pubs/future.html">Do emerging scientists have a future in New Zealand?</a></td>
+            <td class="nowrap">Apr 2012</td>
+            <td class="nowrap">NZAS 2012</td>
+            <td></td>
+            <td><a href="pubs/future.pdf"><i class="icon-download"></i></a></td>
+          </tr>
+          <tr>
+            <td>12</td>
+            <td>Three things Joe taught me</td>
+            <td class="nowrap">Dec 2011</td>
+            <td class="nowrap">Joe Trodahl birthday symposium</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>11</td>
+            <td>My career so far (pecha kucha)</td>
+            <td class="nowrap">Nov 2011</td>
+            <td class="nowrap">MacDiarmid student symposium</td>
+            <td><a href="pubs/20111117 - MacDiarmid student and postdoc pecha kucha - Preston.pptx"><i class="icon-download"></i></a></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td>Electronic band structure of CrN and GdN from x-ray spectroscopy</td>
+            <td class="nowrap">Nov 2010</td>
+            <td class="nowrap">MRS, Fall meeting</td>
+            <td><a href="pubs/20101129 - CrN (Preston).pptx"><i class="icon-download"></i></a></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>The electronic structure of GdN from x-ray spectroscopy</td>
+            <td class="nowrap">Nov 2009</td>
+            <td class="nowrap">MRS, Fall meeting</td>
+            <td><a href="pubs/20091101 - The electronic structure of GdN from x-ray spectroscopy (Preston).ppt"><i class="icon-download"></i></a></td>
+            <td><a href="pubs/20091101 - The electronic structure of GdN from x-ray spectroscopy (Preston).pdf"><i class="icon-download"></i></a></td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>Band structure information from soft x-ray spectroscopy (invited talk)</td>
+            <td class="nowrap">Sep 2009</td>
+            <td class="nowrap">Case Western Reserve University</td>
+            <td><a href="pubs/20090928 - Andrew Preston - Band structure information from soft x-ray spectroscopy.pptx"><i class="icon-download"></i></a></td>
+            <td><a href="pubs/20090928 - Andrew Preston - Band structure information from soft x-ray spectroscopy.pdf"><i class="icon-download"></i></a></td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>Electronic structure of ZnO from x-ray spectroscopy</td>
+            <td class="nowrap">Feb 2009</td>
+            <td class="nowrap">AMN4</td>
+            <td><a href="pubs/20090211 - Andrew Preston - Electronic structure of ZnO (AMN4).ppt"><i class="icon-download"></i></a></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>X-ray spectroscopy (best talk, 3rd place)</td>
+            <td class="nowrap">Nov 2008</td>
+            <td class="nowrap">MacDiarmid student symposium</td>
+            <td><a href="pubs/20081109 - X-ray spectroscopy - Andrew Preston (student symposium talk).ppt"><i class="icon-download"></i></a></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>The electronic structure of ZnO from resonant x-ray emission spectroscopy (invited talk)</td>
+            <td class="nowrap">Nov 2008</td>
+            <td class="nowrap">MacDiarmid Seminar</td>
+            <td><a href="pubs/20080904 - Electronic structure of ZnO - Andrew Preston (MacDiarmid talk).ppt"><i class="icon-download"></i></a></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>High dynamic range photography</td>
+            <td class="nowrap">Jun 2008</td>
+            <td class="nowrap">PhD off-topic talk</td>
+            <td><a href="pubs/20080610 - HDR photography - Andrew Preston (off-topic talk).ppt"><i class="icon-download"></i></a></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Growth and texturing of rare earth nitride thin films</td>
+            <td class="nowrap">Nov 2008</td>
+            <td class="nowrap">MRS, Fall meeting
+            <td><a href="pubs/20071126 - MRS - Growth and texturing of rare earth nitride thin films.ppt"><i class="icon-download"></i></a></td>
+            <td><a href="pubs/20071126 - MRS - Growth and texturing of rare earth nitride thin films.pdf"><i class="icon-download"></i></a></td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Electronic structure of SmN, GdN, and DyN</td>
+            <td class="nowrap">Mar 2007</td>
+            <td class="nowrap">APS, March meeting</td>
+            <td><a href="pubs/20070306 - Electronic structure of SmN, GdN, and DyN.ppt"><i class="icon-download"></i></a></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>Rare earth nitride thin films; growth and transport measurements</td>
+            <td class="nowrap">Mar 2007</td>
+            <td class="nowrap">APS, March meeting</td>
+            <td><a href="pubs/20070306 - Rare earth nitride films - growth and transport measurements.ppt"><i class="icon-download"></i></a></td>
+            <td></td>
+          </tr>
+        </tbody>
       </table>
-    
+
     </section>
 
     <hr />
-    
+
     <footer class="footer">
       <blockquote class="pull-right">
-	<p>If it is right, it happens - the main thing is not to hurry. Nothing good gets away.</p>
-	<small>John Steinbeck</small>
+        <p>If it is right, it happens - the main thing is not to hurry. Nothing good gets away.</p>
+        <small>John Steinbeck</small>
       </blockquote>
-      
+
       <p class="pull-left">Built with
-	<a href="http://twitter.github.com/bootstrap/">bootstrap</a>
-	and <a href="http://jquery.com/">jQuery</a>.</p>
+        <a href="http://twitter.github.com/bootstrap/">bootstrap</a>
+        and <a href="http://jquery.com/">jQuery</a>.</p>
     </footer>
-    
+
   </div>
 
-  <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-  <script type="text/javascript" src="static/bootstrap/js/bootstrap.js"></script>
-  <script type="text/javascript">
-
-$.fn.scrollFix = function() {
-    /*
-     * jQuery plugin to fix an element at the top of the page as the
-     * window scrolls past it. This borrows heavily from the bootstrap
-     * documentation page.
-     *
-     * Assumes the following html structure:
-     *   <div class="scroll-fix">
-     *     <div>
-     *       {content}
-     */
-    
-    var $scrollFix = this; // element to fix in place
-
-    // Ensure that ".scroll-fix" and ".scroll-fix div" are the same
-    // height. This stops the page from jumping around when we fix
-    // ".scroll-fix div" in place
-    $scrollFix.height( $scrollFix.children('div').height() );
-    
-    $(window).on('scroll', processScroll);
-    
-    function processScroll() {
-	var scrollTop = $(window).scrollTop(); // body position at top of window
-	var elemTop = $scrollFix.offset().top; // position of elem from top of body
-	var isFixed = $scrollFix.data('isFixed');
-
-	if (scrollTop >= elemTop && !isFixed) {
-            $scrollFix.data('isFixed', 1);
-            $scrollFix.addClass('scroll-fix-fixed');
-	} else if (scrollTop <= elemTop && isFixed) {
-            $scrollFix.data('isFixed', 0);
-            $scrollFix.removeClass('scroll-fix-fixed');
-	}
-    }
-
-    return this;
-}
-
-$( ".scroll-fix" ).scrollFix();
-				
-$( "a.expand" ).click( function(event) {
-    /*
-     * Expands a span contained within a link. Makes for a nice effect
-     * in what would otherwise be a ridiculously long paragraph.
-     */
-    event.preventDefault();
-
-    $(this)
-	.toggleClass( "active" )
-	.children( "span" ).toggle();
-});
-				
-  </script>
-  <script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-try {
-var pageTracker = _gat._getTracker("UA-11589692-2");
-pageTracker._trackPageview();
-} catch(err) {}
-  </script>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+  <script type="text/javascript" src="/static/bootstrap/js/bootstrap.js"></script>
+  <script type="text/javascript" src="/static/main.js"></script>
 
 </body>
 
