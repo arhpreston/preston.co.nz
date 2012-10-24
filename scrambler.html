@@ -1,235 +1,383 @@
+<!DOCTYPE html>
 <html>
 
-  <head>
-    <title>Scrambler | preston.co.nz</title>
+<head>
+  <title>Scrambler | preston.co.nz</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="shortcut icon" href="/favicon.ico" />
-    <link href="/static/bootstrap/css/bootstrap.css" rel="stylesheet" />
-    <link href="/static/bootstrap/css/bootstrap-responsive.css" rel="stylesheet" />
-    <style type="text/css">
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/css/bootstrap-combined.min.css" rel="stylesheet">
+  <link href="/static/main.css" rel="stylesheet" />
 
-      body { padding-top: 20px; padding-bottom: 40px; }
+  <style>
+    .expand { background-color: red; }
+    .expand span { background-color: blue; display: none; }
 
-      /* Basic layout for the overview section at the top of the page */
-      .hero-unit { padding:30px 60px 30px 60px; margin-bottom:0; } /* default = 60px
+      svg.board { border: solid 0px; margin-top: 50px; }
+      svg.board rect { fill: #dff; stroke: #bbb; }
+      svg.board rect.letter { fill: #dff; stroke: #bbb; stroke-width:5; }
+      svg.board rect.path { fill: #fdd; }
+      svg.board rect.path-start { fill: #ddf; }
 
-      /* Used to fix navbar in place as we scoll */
-      .scroll-fix div ul {
-      padding-left:60px; background-color: whiteSmoke; z-index:100; }
-      .scroll-fix-fixed div { position:fixed; top:0; }
+svg.board rect.dw, svg.board rect.tw { stroke: yellow; }
+svg.board rect.dl, svg.board rect.tl { stroke: green; }
+path { stroke-width: 2; stroke: black; fill: none;
+       marker-start: url(#start);
+     }
+  </style>
+</head>
 
-      /* Effect to allow expansion of hidden sentences in text */
-      a.expand:hover { text-decoration:none; }
-      a.expand span { display:none; }
-      a.expand { color:#370; }
-      a.expand.active { background-color:#ddd; }
-      a.expand.active span { color:#005580; color:#E8BE34; color:#730;}
+<body id="top" data-spy="scroll" data-target=".scroll-fix" data-offset="48"><!-- 48px because .page-header.height is 48px -->
 
-      /* Need to make the following responsive
-      *   => .well { padding:19px; border: 1px solid; } (40 extra pixels)
-      *   => some table columns shouldn't wrap on larger displays, shouldn't show on smaller displays
-      *   => inline lists look horrible at small screen widths
-      */
-      @media (max-width: 480px) {}
-      @media (max-width: 768px) {
-        .hero-unit { padding:10px; }
-        .nowrap { display:none; }
-        .scroll-fix { display:none; }
-        div[class~=well][class~=span4] { margin-bottom:20px; } /* was 228px */ }
-      @media (min-width: 768px) {
-        .nowrap { white-space:nowrap; }
-        ul.inline { display:inline; }
-        ul.inline li { display:inline; }
-        ul.inline li:after { content:" |"; }
-        ul.inline li:last-child:after { content:"."; }
-        ul.hero li span { display:inline-block; width:3em; } /* Align all sublists */ }
-      @media (min-width: 768px) and (max-width: 980px) {
-        div[class~=well][class~=span4] { width:188px; } /* was 228px */ }
-      @media (min-width: 980px) {
-        div[class~=well][class~=span4] { width:260px; } /* was 300px */ }
-      @media (min-width: 1200px) {
-        div[class~=well][class~=span4] { width:330px; } /* was 370px */ }
+  <div class="container">
 
-    </style>
-
-    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>
-    <script type="text/javascript" src="https://raw.github.com/arhpreston/scrambler/master/scrambler.js"></script>
-    <script type="text/javascript">
-      $(document).ready(function() {
-          var dictionaryUrl = "/static/TWL06.txt";
-          init_dictionary(dictionaryUrl);
-      });
-    </script>
-  </head>
-
-  <body id="top" data-spy="scroll" data-target=".scroll-fix" data-offset="48"><!-- 48px because .page-header.height is 48px -->
-
-    <div class="container">
-
-      <div class="row scroll-fix">
-        <div class="span12">
-          <ul class="nav nav-pills nav-collapse">
-            <li><a href="/"><i class="icon-home"></i></a></li>
-            <li><a href="/#my-projects">Projects</a></li>
-            <li><a href="/#my-publications">Publications</a></li>
-            <li><a href="/#my-presentations">Presentations</a></li>
-          </ul>
-        </div>
+    <div class="row scroll-fix">
+      <div class="span12">
+        <ul class="nav nav-pills nav-collapse">
+          <li><a href="/"><i class="icon-home"></i></a></li>
+          <li><a href="/#my-projects">Projects</a></li>
+          <li><a href="/#my-publications">Publications</a></li>
+          <li><a href="/#my-presentations">Presentations</a></li>
+        </ul>
       </div>
-
-      <section id="my-projects">
-        <div class="page-header">
-          <h1>Scrambler</h1>
-        </div>
-
-        <div class="row">
-          <div class="span5">
-            <p>
-              Calculate all the words on a scramble
-              board. See <a href="https://github.com/arhpreston/scrambler">github</a>
-              for details.
-            </p>
-
-            <ul>
-              <li>
-                Board:
-                <input type="text" id="board" value="ITOR,EPAG,SAIY,EREH" size="30" />
-
-                <p>Input letters in the order:
-                  <pre>
-                    0  1  2  3
-                    4  5  6  7
-                    8  9 10 11
-                   12 13 14 15</pre>
-                </p>
-              </li>
-              <li>
-                Bonus markers:
-                <ul>
-                  <li>Double letters: <input type="text" id="dl" value="0, 5" size="5" /></li>
-                  <li>Triple letters: <input type="text" id="tl" value="" size="5" /></li>
-                  <li>Double words: <input type="text" id="dw" value="" size="5" /></li>
-                  <li>Triple words: <input type="text" id="tw" value="" size="5" /></li>
-                </ul>
-              </li>
-              <li>
-                <button id="play">Play!</button></li>
-              <li id="found_words"></li>
-            </ul>
-      </section>
-
-      <hr />
-
-      <footer class="footer">
-        <p class="pull-right"><em>by</em> Andrew Preston</p>
-        <p class="pull-left">Built with
-          <a href="http://twitter.github.com/bootstrap/">bootstrap</a>
-          and <a href="http://jquery.com/">jQuery</a>.</p>
-      </footer>
-
     </div>
 
-    <script>
-      $("#play").click(function() {
-          $("#found_words")
-              .html($("<table>")
-                    .attr("class", "table table-condensed table-striped")
-                    .append($("<thead>")
-                            .append($("<tr>")
-                                    .append("<th>#</th>")
-                                    .append("<th>Score</th>")
-                                    .append("<th>Net score</th>")
-                                    .append("<th>Word</th>")))
-                    .append($("<tbody>")));
+    <section id="content">
 
-          var input = $("#board").val();
-          var bonus_squares = {
-              "dl": $.parseJSON("[" + $("#dl").val() + "]"),
-              "tl": $.parseJSON("[" + $("#tl").val() + "]"),
-              "dw": $.parseJSON("[" + $("#dw").val() + "]"),
-              "tw": $.parseJSON("[" + $("#tw").val() + "]"),
-          };
-          var found_words = scramble(input, bonus_squares);
+      <div class="page-header">
+        <h1>Scrambler</h1>
+      </div>
 
-          var sortable_words = [];
-          for (var word in found_words) {
-              sortable_words.push([word, found_words[word]]);
-          };
-          sortable_words.sort(function(a, b) {
-              // Sort from largest score to smallest
-              return b[1] - a[1];
-          });
+      <div class="row">
+        <div class="span5">
+          <p>
+            Calculate all the words on a scramble
+            board. See <a href="https://github.com/arhpreston/scrambler">github</a>
+            for details.
+          </p>
 
-          var running_total = 0;
-          $(sortable_words).each(function(i) {
-              running_total += sortable_words[i][1];
-              $("#found_words table tbody")
-                  .append($("<tr>")
-                          .append($("<td>")
-                                  .append(i))
-                          .append($("<td>")
-                                  .append(sortable_words[i][1]))
-                          .append($("<td>")
-                                  .append(running_total))
-                          .append($("<td>")
-                                  .append(sortable_words[i][0])));
-          });
-      });
+          <h2>Initialization</h2>
+          <p>Dictionary: <span id="dict-status"></span></p>
+          <button id="dict-load" class="btn btn-block">Load!</button>
 
-$.fn.scrollFix = function() {
-    /*
-     * jQuery plugin to fix an element at the top of the page as the
-     * window scrolls past it. This borrows heavily from the bootstrap
-     * documentation page.
-     *
-     * Assumes the following html structure:
-     *   <div class="scroll-fix">
-     *     <div>
-     *       {content}
-     */
+          <h2>Setup</h2>
+          <form class="board-setup form-inline">
+            <label>Board:</label>
+            <input type="text" id="letters" value="ITOR,EPAG,SAIY,EREH" size="30" />
 
-    var $scrollFix = this; // element to fix in place
+            <div class="controls">
+              <div class="controls-row">
+                <label>Double letters: </label><input type="text" class="input-small" id="dl" value="0, 5" size="5" />
+                <label>Triple letters: </label><input type="text" class="input-small" id="tl" value="" size="5" />
+              </div>
+              <div class="controls-row">
+                <label>Double words: </label><input type="text" class="input-small" id="dw" value="" size="5" />
+                <label>Triple words: </label><input type="text" class="input-small" id="tw" value="" size="5" />
+              </div>
+            </div>
+          </form>
 
-    // Ensure that ".scroll-fix" and ".scroll-fix div" are the same
-    // height. This stops the page from jumping around when we fix
-    // ".scroll-fix div" in place
-    $scrollFix.height( $scrollFix.children('div').height() );
+          <button id="play" class="btn btn-large btn-block btn-primary">Play!</button>
 
-    $(window).on('scroll', processScroll);
+          <h2>Results</h2>
+          <div id="word-list">
+            <table class="table table-condensed table-striped table-hover"></table>
+          </div>
+        </div>
 
-    function processScroll() {
-        var scrollTop = $(window).scrollTop(); // body position at top of window
-        var elemTop = $scrollFix.offset().top; // position of elem from top of body
-        var isFixed = $scrollFix.data('isFixed');
+        <div class="offset2 span5 scroll-fix">
+          <svg>
+            <defs>
+              <marker id="start" markerWidth="8" markerHeight="8"
+                      orient="auto" refY="2">
+                <path d="M0,0 L4,2 0,4" />
+              </marker>
+            </defs>
+          </svg>
+          <div id="board-view">
+            <!-- svg board goes here -->
+          </div>
+        </div>
+      </div>
+    </section>
 
-        if (scrollTop >= elemTop && !isFixed) {
-            $scrollFix.data('isFixed', 1);
-            $scrollFix.addClass('scroll-fix-fixed');
-        } else if (scrollTop <= elemTop && isFixed) {
-            $scrollFix.data('isFixed', 0);
-            $scrollFix.removeClass('scroll-fix-fixed');
-        }
-    }
+    <hr />
 
-    return this;
-}
+    <footer class="footer">
+      <p class="pull-right"><em>by</em> Andrew Preston</p>
+      <p class="pull-left">Built with
+        <a href="http://twitter.github.com/bootstrap/">bootstrap</a>
+        and <a href="http://jquery.com/">jQuery</a>.</p>
+    </footer>
 
-$( ".scroll-fix" ).scrollFix();
+  </div>
 
-$( "a.expand" ).click( function(event) {
-    /*
-     * Expands a span contained within a link. Makes for a nice effect
-     * in what would otherwise be a ridiculously long paragraph.
-     */
-    event.preventDefault();
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>
+  <script src="/static/bootstrap/js/bootstrap.js"></script>
+  <script src="/static/main.js"></script>
 
-    $(this)
-        .toggleClass( "active" )
-        .children( "span" ).toggle();
+  <script src="http://d3js.org/d3.v2.js"></script>
+  <script src="https://raw.github.com/arhpreston/scrambler/master/scrambler.js"></script>
+  <--<script src="/static/scrambler.js"></script>-->
+
+<script>
+
+//var dictionaryUrl = "/static/TWL06.txt";
+var dictionaryUrl = "https://raw.github.com/arhpreston/scrambler/master/static/TWL06.txt";
+var dictionaryWordCount;
+var letters, bonusSquares;
+
+$(document).ready(function() {
+    // Initialize letters
+    $("#letters").change();
+
+    // Initialize scramble dict
+    $("#dict-status").text(dictionaryUrl);
 });
 
-    </script>
-  </body>
+$(".board-setup input").change(function() {
+    letters = $("#letters").val()
+        .toUpperCase()
+        .replace(/[U,\s]/g, "")
+        .split("");
+
+    bonusSquares = {
+        "dl": $.parseJSON("[" + $("#dl").val() + "]"),
+        "tl": $.parseJSON("[" + $("#tl").val() + "]"),
+        "dw": $.parseJSON("[" + $("#dw").val() + "]"),
+        "tw": $.parseJSON("[" + $("#tw").val() + "]"),
+    };
+
+    // If any of the above has changed then we need to refresh
+    updateBoard();
+    updateTable([]);
+});
+
+function nested(array) {
+    // Convert array of 16 elements into 4x4 matrix.
+    var matrix = [];
+    for (var row=0; row<4; row++) {
+        matrix.push(array.slice(row*4, row*4+4));
+    }
+    return matrix;
+}
+
+
+// Set up scramble board
+var boardWidth = 300;
+board = d3.select("#board-view").append("svg")
+    .attr("class", "board")
+    .attr("width", boardWidth).attr("height", boardWidth);
+
+var table = d3.select("#word-list table"),
+    thead = table.append("thead"),
+    tbody = table.append("tbody");
+
+thead.append("tr")
+    .selectAll("th")
+      .data(["#", "Score", "Net score", "Word"])
+      .enter()
+        .append("th")
+        .text(function(column) {return column; });
+
+// Refresh functions
+function updateBoard() {
+    var padding = 10;
+    var cellWidth = boardWidth/4 - 2*padding;
+
+    var boardRows = board.selectAll("g.row")
+        .data(nested(letters))
+
+    boardRows.enter()
+        .append("g")
+          .attr("class", "row")
+          .attr("width", boardWidth).attr("height", boardWidth/4)
+          .attr("transform", function(d, i) { return "translate(0," + i*boardWidth/4 + ")"; });
+
+    var boardCells = boardRows.selectAll("g.cell")
+        .data(function(d, i) { return d; })
+
+    boardCells.enter()
+        .append("g")
+          .attr("class", "cell")
+          .attr("transform", function(d, i) { return "translate(" + i*boardWidth/4 + ",0)"; });
+
+    boardCells.exit().remove();
+
+    var cells = board.selectAll("g.cell");
+    cells.selectAll("g").remove();
+    cells.append("g")
+        .attr("class", "button")
+        .attr("transform", "translate(" + padding + "," + padding + ")");
+
+    cells = board.selectAll("g.button");
+
+    // Background
+    cells
+        .append("rect")
+          .attr("width", cellWidth).attr("height", cellWidth)
+          .attr("rx", 10).attr("ry", 10)
+          .attr("class", "letter");
+
+    // Letters
+    cells
+        .append("text")
+          .text(function(d, i) { return letters[i]; })
+          .attr("class", "letter")
+          .attr("font-size", 20)
+          .attr("text-anchor", "middle")
+          .attr("dy", ".35em") // vertical alignment
+          .attr("x", cellWidth/2).attr("y", cellWidth/2);
+
+    // Top left numbers
+    // cells
+    //     .append("text")
+    //       .text(function(d, i) { return i; })
+    //       .attr("class", "number")
+    //       .attr("text-anchor", "start")
+    //       .attr("dy", "0.71em"); // top alignment
+
+    // Bottom right scores
+    cells
+        .append("text")
+          .text(function(d, i) { return scrambler.SCORES[letters[i]]; })
+          .attr("class", "score")
+          .attr("text-anchor", "end")
+          .attr("dy", 0)
+          .attr("x", cellWidth-10).attr("y", cellWidth-10);
+
+    // Bonus squares
+    for (var bonus in bonusSquares) {
+
+        // Add e.g., class="dw" to double word squares
+        cells.select("rect.letter")
+            .classed(bonus, function(d, i) {
+                return bonusSquares[bonus].indexOf(i) != -1;
+            })
+
+        // Add e.g., "dw" to top right corner of double word squares
+        cells.append("text")
+            .text(function(d, i) {
+                var contains = bonusSquares[bonus].indexOf(i) != -1;
+                return contains ? bonus : null;
+            })
+            .attr("class", bonus)
+            .attr("x", cellWidth-5).attr("y", 5)
+            .attr("text-anchor", "end")
+            .attr("dy", "0.71em"); // top alignment
+    }
+}
+
+function updateTable(sortableWords) {
+    function mouseOver(p) {
+        // If no word is given then use the empty path
+        p = p ? p : {"path": []}
+
+        // Update classes
+        board.selectAll("rect.letter")
+            .classed("path", function(d, i) {
+                return p.path.indexOf(i) != -1;
+            })
+            .classed("path-start", function(d, i) {
+                return i == p.path[0];
+            });
+
+        board.selectAll("path").remove();
+        var cellWidth = boardWidth / 4;
+        var cellCenter = cellWidth / 2;
+        var line = d3.svg.line()
+            .interpolate("linear")
+            .x(function(d) {
+                corrX = d % 4
+                return cellCenter + cellWidth*corrX;
+            })
+            .y(function(d) {
+                corrY = Math.floor(d/4);
+                return cellCenter + cellWidth*corrY;
+            });
+
+        board.append("path")
+            .attr("d", line(p.path));
+    }
+
+    function mouseOut() {
+        mouseOver();
+    }
+
+    var rows = tbody.selectAll("tr")
+        .data(sortableWords)
+
+    rows.enter()
+        .append("tr")
+        .on("mouseover", mouseOver)
+        .on("mouseout", mouseOut);
+
+    rows.exit().remove();
+
+    var cells = rows.selectAll("td")
+        .data(function(row) {
+            return [row.i, row.score, row.running_total, row.word];
+        });
+
+    cells.enter()
+        .append("td")
+        .text(String);
+
+    cells.transition()
+        .text(String);
+
+    cells.exit().remove();
+}
+
+
+// Action functions
+$("#dict-load").click(function() {
+    $("#dict-status").text("loading...");
+    $("#dict-load").text("Loading").addClass("disabled");
+
+    scrambler.initDictionary(dictionaryUrl, function(n) {
+        dictionaryWordCount = n;
+        $("#dict-status").text("loaded " + n + " words");
+        $("#dict-load").text("Loaded");
+    });
+});
+
+$("#play").click(function() {
+    // Initialize dictionary, if needed
+    if (!dictionaryWordCount) $("#dict-load").click();
+
+    // Run the game
+    var sortableWords = []
+    var foundWords = scrambler.scramble(letters, bonusSquares);
+
+    for (var word in foundWords) {
+        sortableWords.push(
+            {
+                "word": word,
+                "score": foundWords[word].score,
+                "path": foundWords[word].path,
+            }
+        );
+    };
+
+    // Sort from largest score to smallest
+    sortableWords.sort(function(a, b) {
+        return b.score - a.score;
+    });
+
+    var runningTotal = 0;
+    for (var word in sortableWords) {
+        sortableWords[word].i = +word;
+        runningTotal += sortableWords[word].score;
+        sortableWords[word].running_total = runningTotal;
+    };
+
+    updateTable(sortableWords);
+});
+
+</script>
+
+</body>
+
 </html>
