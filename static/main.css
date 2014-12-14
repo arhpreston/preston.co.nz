@@ -2,7 +2,8 @@
 body { padding-top: 20px; padding-bottom: 40px; }
 
 /* Basic layout for the overview section at the top of the page */
-.hero-unit { padding:30px 60px 30px 60px; margin-bottom:0; } /* default = 60px */
+.hero-unit { padding:30px 60px 30px 60px; margin-bottom:0; position: relative; } /* default = 60px */
+.hero-unit iframe { position: absolute; right: 40px; }
 
 /* Used to fix navbar in place as we scoll */
 .scroll-fix div ul {
