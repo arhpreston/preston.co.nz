@@ -1,0 +1,11 @@
+# preston.co.nz
+
+server {
+    listen 80;
+    root /var/www/preston.co.nz/src;
+    server_name preston.co.nz;
+    index index.html;
+
+    access_log /var/www/preston.co.nz/logs/nginx.access.log;
+    error_log  /var/www/preston.co.nz/logs/nginx.error.log error;
+}
