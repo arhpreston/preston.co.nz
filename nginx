@@ -1,9 +1,21 @@
 # preston.co.nz
 
 server {
-    listen 80;
+    listen 80 default_server;
+    listen [::]:80 default_server;
+    server_name preston.co.nz www.preston.co.nz;
+    return 301 https://$server_name$request_uri;
+}
+
+server {
+    listen 443 ssl default_server;
+    listen [::]:443 ssl default_server;
+    server_name preston.co.nz www.preston.co.nz;
+
+    ssl_certificate /etc/letsencrypt/live/preston.co.nz/fullchain1.pem;
+    ssl_certificate_key /etc/letsencrypt/live/preston.co.nz/privkey1.pem;
+
     root /var/www/preston.co.nz/src;
-    server_name preston.co.nz;
     index index.html;
 
     access_log /var/www/preston.co.nz/logs/nginx.access.log;
