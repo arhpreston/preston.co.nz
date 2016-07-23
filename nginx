@@ -12,8 +12,8 @@ server {
     listen [::]:443 ssl default_server;
     server_name preston.co.nz www.preston.co.nz;
 
-    ssl_certificate /etc/letsencrypt/live/preston.co.nz/fullchain1.pem;
-    ssl_certificate_key /etc/letsencrypt/live/preston.co.nz/privkey1.pem;
+    ssl_certificate /etc/letsencrypt/live/preston.co.nz/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/preston.co.nz/privkey.pem;
 
     root /var/www/preston.co.nz/src;
     index index.html;
